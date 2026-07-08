@@ -22,10 +22,15 @@ public class ModCreativeModeTabs {
                     .displayItems((itemDisplayParameters, output) -> {
                         output.accept(ModItems.EXTRACTION_CORE.get());
                         output.accept(ModItems.ESSENCE.get());
+                        output.accept(ModItems.ESSENCE_CORE.get());
 
                         // Add every Energy / Essence item pair here as you create them, e.g.:
                         output.accept(ModItems.VOID_ENERGY.get());
                         output.accept(ModItems.VOID_ESSENCE.get());
+                        output.accept(ModItems.LIGHTNING_ENERGY.get());
+                        output.accept(ModItems.LIGHTNING_ESSENCE.get());
+                        output.accept(ModItems.ASTRAL_ENERGY.get());
+                        output.accept(ModItems.ASTRAL_ESSENCE.get());
 
                         output.accept(ModBlocks.ENERGY_TABLE.get().asItem());
                         output.accept(ModBlocks.ESSENCE_TABLE.get().asItem());

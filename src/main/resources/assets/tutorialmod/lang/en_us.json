@@ -1,8 +1,13 @@
 {
   "item.tutorialmod.extraction_core": "Extraction Core",
   "item.tutorialmod.essence": "Essence",
+  "item.tutorialmod.essence_core": "Essence Core",
   "item.tutorialmod.void_essence": "Void Essence",
   "item.tutorialmod.void_energy": "Void Energy",
+  "item.tutorialmod.lightning_essence": "Lightning Essence",
+  "item.tutorialmod.lightning_energy": "Lightning Energy",
+  "item.tutorialmod.astral_essence": "Astral Essence",
+  "item.tutorialmod.astral_energy": "Astral Energy",
   "creativetab.tutorialmod.oblivion_tab": "Oblivion",
 
   "block.tutorialmod.essence_table": "Essence Table",

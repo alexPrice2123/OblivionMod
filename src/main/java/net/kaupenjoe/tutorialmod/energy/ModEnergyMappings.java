@@ -5,10 +5,12 @@ import net.kaupenjoe.tutorialmod.item.ModItems;
 public class ModEnergyMappings {
     public static void init() {
         // Register your fusions
-        EnergyFusionRegistry.register(ModItems.VOID_ENERGY, ModItems.VOID_ENERGY, ModItems.VOID_ENERGY);
+        EnergyFusionRegistry.register(ModItems.LIGHTNING_ENERGY, ModItems.VOID_ENERGY, ModItems.ASTRAL_ENERGY);
 
         // 2. The Essence table checks this map: Void Energy transforms your item into Void Essence!
         EnergyEssenceRegistry.register(ModItems.VOID_ENERGY, ModItems.VOID_ESSENCE, 1, 0.2f, 0.0f, 0.4f);
+        EnergyEssenceRegistry.register(ModItems.LIGHTNING_ENERGY, ModItems.LIGHTNING_ESSENCE, 1, 0.49f, 0.98f, 1.0f);
+        EnergyEssenceRegistry.register(ModItems.ASTRAL_ENERGY, ModItems.ASTRAL_ESSENCE, 1, 0.8f, 0.7f, 0.9f);
         // --- Add each new Tier-1 energy the same way ---
         // EnergyEssenceRegistry.register(ModItems.LIGHTNING_ENERGY, ModItems.ESSENCE_OF_LIGHTNING, 1, 0.0f, 0.9f, 0.9f);
         // EnergyEssenceRegistry.register(ModItems.PURE_ENERGY,      ModItems.ESSENCE_OF_PURE,      1, 1.0f, 1.0f, 1.0f);

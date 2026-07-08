@@ -15,5 +15,6 @@ public class ModModelProvider extends ItemModelProvider {
     @Override
     protected void registerModels() {
         basicItem(ModItems.EXTRACTION_CORE.get());
+        basicItem(ModItems.LIGHTNING_ENERGY.get());
     }
 }
