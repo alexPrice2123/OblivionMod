@@ -20,7 +20,6 @@ import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
 import net.neoforged.neoforge.event.server.ServerStartingEvent;
-import net.kaupenjoe.tutorialmod.block.entity.ModBlockEntities;
 import net.kaupenjoe.tutorialmod.client.renderer.EssenceTableBlockEntityRenderer;
 import net.kaupenjoe.tutorialmod.client.renderer.EnergyTableBlockEntityRenderer;
 import net.neoforged.neoforge.client.event.EntityRenderersEvent;
@@ -39,7 +38,8 @@ public class TutorialMod {
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
         ModBlockEntities.register(modEventBus);
-        ModEnergyMappings.register();
+
+        // REMOVED ModEnergyMappings.register() from here because it was too early!
 
         modEventBus.addListener(this::addCreative);
 
@@ -47,6 +47,9 @@ public class TutorialMod {
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
+        event.enqueueWork(() -> {
+            ModEnergyMappings.init(); // Use init() instead of register()
+        });
     }
 
     private void addCreative(BuildCreativeModeTabContentsEvent event) {

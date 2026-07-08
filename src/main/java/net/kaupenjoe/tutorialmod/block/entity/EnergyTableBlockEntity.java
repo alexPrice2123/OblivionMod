@@ -3,6 +3,7 @@ package net.kaupenjoe.tutorialmod.block.entity;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.network.Connection;
 import net.minecraft.network.protocol.Packet;
 import net.minecraft.network.protocol.game.ClientGamePacketListener;
 import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
@@ -39,16 +40,18 @@ public class EnergyTableBlockEntity extends BlockEntity {
         this.beingDrained = drained;
     }
 
-    /** Called by the Essence Table when the process finishes. Returns the item that was drained. */
-    public ItemStack consumeEnergyItem() {
-        ItemStack drained = energyItem.copyWithCount(1);
-        energyItem.shrink(1);
-        if (energyItem.isEmpty()) {
-            energyItem = ItemStack.EMPTY;
+    /** Called by the Essence Table when the process finishes. */
+    public void consumeEnergyItem() {
+        // 1. Actually clear the item stack
+        this.energyItem = ItemStack.EMPTY;
+
+        // 2. Save the change to the server
+        this.setChanged();
+
+        // 3. Force sync to the client so the item visually disappears instantly
+        if (this.level != null && !this.level.isClientSide()) {
+            this.level.sendBlockUpdated(this.getBlockPos(), this.getBlockState(), this.getBlockState(), 3);
         }
-        beingDrained = false;
-        syncToClient();
-        return drained;
     }
 
     private void syncToClient() {
@@ -75,6 +78,19 @@ public class EnergyTableBlockEntity extends BlockEntity {
         return ClientboundBlockEntityDataPacket.create(this);
     }
 
+    // Automatically handles the incoming network packet on the client side
+    @Override
+    public void onDataPacket(Connection net, ClientboundBlockEntityDataPacket pkt, HolderLookup.Provider registries) {
+        CompoundTag tag = pkt.getTag();
+        if (tag != null) {
+            loadAdditional(tag, registries);
+            if (this.level != null && this.level.isClientSide()) {
+                // Forces the client chunk and your custom renderer to redraw the block completely empty
+                this.level.sendBlockUpdated(this.getBlockPos(), this.getBlockState(), this.getBlockState(), 3);
+            }
+        }
+    }
+
     @Override
     protected void saveAdditional(CompoundTag tag, HolderLookup.Provider registries) {
         super.saveAdditional(tag, registries);
@@ -89,6 +105,7 @@ public class EnergyTableBlockEntity extends BlockEntity {
         if (tag.contains("EnergyItem")) {
             this.energyItem = ItemStack.parseOptional(registries, tag.getCompound("EnergyItem"));
         } else {
+            // CRITICAL: If the NBT data does not have an energy item, clear it out explicitly.
             this.energyItem = ItemStack.EMPTY;
         }
     }

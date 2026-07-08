@@ -36,10 +36,17 @@ public class EnergyTableBlock extends BaseEntityBlock {
         if (level.isClientSide()) return ItemInteractionResult.SUCCESS;
 
         if (level.getBlockEntity(pos) instanceof EnergyTableBlockEntity be) {
-            if (!be.hasEnergyItem() && !stack.isEmpty()
+            // Check if it's empty, NOT currently being drained, and it's a valid item
+            if (!be.hasEnergyItem() && !be.isBeingDrained() && !stack.isEmpty()
                     && EnergyEssenceRegistry.isValidEnergyItem(stack.getItem())) {
+
                 be.setEnergyItem(stack.copyWithCount(1));
                 stack.shrink(1);
+
+                // FORCE SYNC: Tell the block entity and world that data changed
+                be.setChanged();
+                level.sendBlockUpdated(pos, state, state, 3);
+
                 return ItemInteractionResult.CONSUME;
             }
         }
@@ -56,6 +63,11 @@ public class EnergyTableBlock extends BaseEntityBlock {
                 ItemStack out = be.getEnergyItem();
                 be.setEnergyItem(ItemStack.EMPTY);
                 player.getInventory().placeItemBackInInventory(out);
+
+                // FORCE SYNC: Tell the block entity and world that data changed
+                be.setChanged();
+                level.sendBlockUpdated(pos, state, state, 3);
+
                 return InteractionResult.CONSUME;
             }
         }
