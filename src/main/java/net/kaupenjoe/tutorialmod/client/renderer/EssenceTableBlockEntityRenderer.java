@@ -26,7 +26,7 @@ public class EssenceTableBlockEntityRenderer implements BlockEntityRenderer<Esse
         poseStack.pushPose();
 
         // Center above the block, floating just above the top face
-        poseStack.translate(0.5, 1.1, 0.5);
+        poseStack.translate(0.5, 1.35, 0.5);
 
         // Slow spin based on world time for a nice "magic item" feel
         float rotation = (be.getLevel().getGameTime() + partialTick) * 2.0f;

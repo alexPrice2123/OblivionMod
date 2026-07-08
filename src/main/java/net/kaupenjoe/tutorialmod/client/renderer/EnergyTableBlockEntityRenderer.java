@@ -23,7 +23,7 @@ public class EnergyTableBlockEntityRenderer implements BlockEntityRenderer<Energ
         if (stack.isEmpty()) return;
 
         poseStack.pushPose();
-        poseStack.translate(0.5, 1.1, 0.5);
+        poseStack.translate(0.5, 1.35, 0.5);
 
         float rotation = (be.getLevel().getGameTime() + partialTick) * 2.0f;
         poseStack.mulPose(com.mojang.math.Axis.YP.rotationDegrees(rotation));
