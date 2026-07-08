@@ -3,18 +3,17 @@ package net.kaupenjoe.tutorialmod.datagen;
 import net.kaupenjoe.tutorialmod.TutorialMod;
 import net.kaupenjoe.tutorialmod.item.ModItems;
 import net.minecraft.data.PackOutput;
-import net.minecraft.data.models.BlockModelGenerators;
-import net.minecraft.data.models.ItemModelGenerators;
-import net.minecraft.data.models.ModelProvider;
-import net.minecraft.data.models.model.ModelTemplates;
+import net.neoforged.neoforge.client.model.generators.ItemModelProvider;
+import net.neoforged.neoforge.common.data.ExistingFileHelper;
 
-public class ModModelProvider extends ModelProvider {
-    public ModModelProvider(PackOutput output) {
-        super(output, TutorialMod.MOD_ID);
+public class ModModelProvider extends ItemModelProvider {
+
+    public ModModelProvider(PackOutput output, ExistingFileHelper existingFileHelper) {
+        super(output, TutorialMod.MOD_ID, existingFileHelper);
     }
 
     @Override
-    protected  void registerModels(BlockModelGenerators blockModels, ItemModelGenerators itemModels){
-        itemModels.generateFlatItems(ModItems.EXTRACTION_CORE).get(), ModelTemplates.FLAT_ITEM;
+    protected void registerModels() {
+        basicItem(ModItems.EXTRACTION_CORE.get());
     }
 }

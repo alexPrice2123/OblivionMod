@@ -24,6 +24,6 @@ forgedatauserdev
 tutorialmod
 --all
 --output
-/home/alexander/Documents/GitHub/OblivionMob/src/generated/resources
+/home/alexander/Documents/GitHub/OblivionMod/src/generated/resources
 --existing
-/home/alexander/Documents/GitHub/OblivionMob/src/main/resources
+/home/alexander/Documents/GitHub/OblivionMod/src/main/resources
