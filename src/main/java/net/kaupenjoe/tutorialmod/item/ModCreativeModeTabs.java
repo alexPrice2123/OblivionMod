@@ -17,15 +17,18 @@ public class ModCreativeModeTabs {
 
     public static final Supplier<CreativeModeTab> OBLIVION_TAB = CREATIVE_MODE_TAB.register("oblivion_tab",
             () -> CreativeModeTab.builder()
-                    .icon(() -> new ItemStack(ModItems.ESSENCE.get()))
+                    .icon(() -> new ItemStack(ModItems.EXTRACTION_CORE.get()))
                     .title(Component.translatable("creativetab.tutorialmod.oblivion_tab"))
                     .displayItems((itemDisplayParameters, output) -> {
-                        // Add every item you want to appear here
                         output.accept(ModItems.EXTRACTION_CORE.get());
                         output.accept(ModItems.ESSENCE.get());
 
-                        // Add block items too (example)
-                        // output.accept(ModBlocks.YOUR_BLOCK.get());
+                        // Add every Energy / Essence item pair here as you create them, e.g.:
+                        // output.accept(ModItems.VOID_ENERGY.get());
+                        // output.accept(ModItems.ESSENCE_OF_VOID.get());
+
+                        output.accept(ModBlocks.ENERGY_TABLE.get().asItem());
+                        output.accept(ModBlocks.ESSENCE_TABLE.get().asItem());
                     }).build());
 
     public static void register(IEventBus eventBus) {

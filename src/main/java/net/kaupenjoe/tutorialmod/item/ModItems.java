@@ -14,6 +14,10 @@ public class ModItems {
 
     public static final DeferredItem<Item> ESSENCE = ITEMS.register("essence",
             () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> VOIDESSENCE = ITEMS.register("void_essence",
+            () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> VOIDENERGY = ITEMS.register("void_energy",
+            () -> new Item(new Item.Properties()));
 
 
     public static void register(IEventBus eventBus) {

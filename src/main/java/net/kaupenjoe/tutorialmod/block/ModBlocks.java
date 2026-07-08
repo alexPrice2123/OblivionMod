@@ -12,6 +12,8 @@ import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredRegister;
+import net.kaupenjoe.tutorialmod.block.custom.EssenceTableBlock;
+import net.kaupenjoe.tutorialmod.block.custom.EnergyTableBlock;
 
 import java.util.function.Supplier;
 
@@ -19,13 +21,15 @@ public class ModBlocks {
     public static final DeferredRegister.Blocks BLOCKS =
             DeferredRegister.createBlocks(TutorialMod.MOD_ID);
 
-    public static final DeferredBlock<Block> BISMUTH_BLOCK = registerBlock("bismuth_block",
-            () -> new Block(BlockBehaviour.Properties.of()
-                    .strength(4f).requiresCorrectToolForDrops().sound(SoundType.AMETHYST)));
+    public static final DeferredBlock<Block> ESSENCE_TABLE = registerBlock("essence_table",
+            () -> new EssenceTableBlock(BlockBehaviour.Properties.of()
+                    .strength(3.5f)
+                    .noOcclusion()));
 
-    public static final DeferredBlock<Block> BISMUTH_ORE = registerBlock("bismuth_ore",
-            () -> new DropExperienceBlock(UniformInt.of(2, 4),
-                    BlockBehaviour.Properties.of().strength(3f).requiresCorrectToolForDrops().sound(SoundType.STONE)));
+    public static final DeferredBlock<Block> ENERGY_TABLE = registerBlock("energy_table",
+            () -> new EnergyTableBlock(BlockBehaviour.Properties.of()
+                    .strength(3.5f)
+                    .noOcclusion()));
 
 
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block) {

@@ -1,10 +1,8 @@
 {
   "item.tutorialmod.extraction_core": "Extraction Core",
+  "item.tutorialmod.essence": "Essence",
   "creativetab.tutorialmod.oblivion_tab": "Oblivion",
 
-  "block.tutorialmod.bismuth_block": "Block of Bismuth",
-  "block.tutorialmod.bismuth_ore": "Bismuth Ore",
-
-  "creativetab.tutorialmod.bismuth_items": "Bismuth Items",
-  "creativetab.tutorialmod.bismuth_blocks": "Bismuth Blocks"
+  "block.tutorialmod.essence_table": "Essence Table",
+  "block.tutorialmod.energy_table": "Energy Table"
 }
