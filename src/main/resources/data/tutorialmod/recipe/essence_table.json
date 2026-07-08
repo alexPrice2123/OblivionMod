@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "GDG",
+    "DSD",
+    "GDG"
+  ],
+  "key": {
+    "G": {
+      "item": "minecraft:gold_ingot"
+    },
+    "D": {
+      "item": "minecraft:dark_oak_planks"
+    },
+    "S": {
+      "item": "minecraft:smithing_table"
+    }
+  },
+  "result": {
+    "id": "tutorialmod:essence_table",
+    "count": 1
+  }
+}

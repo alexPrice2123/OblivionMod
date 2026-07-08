@@ -4,6 +4,7 @@ import com.mojang.serialization.MapCodec;
 import net.kaupenjoe.tutorialmod.block.entity.EssenceTableBlockEntity;
 import net.kaupenjoe.tutorialmod.block.entity.ModBlockEntities;
 import net.minecraft.core.BlockPos;
+import net.minecraft.world.Containers;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.ItemInteractionResult;
@@ -61,6 +62,18 @@ public class EssenceTableBlock extends BaseEntityBlock {
             }
         }
         return InteractionResult.PASS;
+    }
+
+    @Override
+    protected void onRemove(BlockState state, Level level, BlockPos pos, BlockState newState, boolean movedByPiston) {
+        if (!state.is(newState.getBlock())) {
+            if (level.getBlockEntity(pos) instanceof EssenceTableBlockEntity be) {
+                if (!be.getEssenceItem().isEmpty()) {
+                    Containers.dropItemStack(level, pos.getX(), pos.getY(), pos.getZ(), be.getEssenceItem());
+                }
+            }
+        }
+        super.onRemove(state, level, pos, newState, movedByPiston);
     }
 
     @Nullable

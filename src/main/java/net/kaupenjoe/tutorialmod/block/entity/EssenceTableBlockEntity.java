@@ -6,6 +6,9 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.network.protocol.Packet;
+import net.minecraft.network.protocol.game.ClientGamePacketListener;
+import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -38,13 +41,13 @@ public class EssenceTableBlockEntity extends BlockEntity {
         return processing;
     }
 
-    /** Only accepts the Raw Essence item. Returns false (and consumes nothing) otherwise. */
+    /** Only accepts the Essence item. Returns false (and consumes nothing) otherwise. */
     public boolean tryInsertEssence(ItemStack stack) {
         if (hasEssenceItem() || processing) return false;
-        if (!stack.is(ModItems.ESSENCE.get())) return false;   // was RAW_ESSENCE
+        if (!stack.is(ModItems.ESSENCE.get())) return false;
 
         this.essenceItem = stack.copyWithCount(1);
-        setChanged();
+        syncToClient();
         return true;
     }
 
@@ -52,7 +55,7 @@ public class EssenceTableBlockEntity extends BlockEntity {
         if (processing || essenceItem.isEmpty()) return ItemStack.EMPTY;
         ItemStack out = essenceItem;
         essenceItem = ItemStack.EMPTY;
-        setChanged();
+        syncToClient();
         return out;
     }
 
@@ -103,12 +106,12 @@ public class EssenceTableBlockEntity extends BlockEntity {
         if (resultEssence != null) {
             essenceItem = new ItemStack(resultEssence);
         }
-        // If somehow no mapping exists, the Raw Essence just stays as-is (safety fallback).
+        // If somehow no mapping exists, the Essence item just stays as-is (safety fallback).
 
         processing = false;
         processTicks = 0;
         linkedEnergyTablePos = null;
-        setChanged();
+        syncToClient();
     }
 
     private BlockPos findValidEnergyTable(Level level, BlockPos origin) {
@@ -137,10 +140,36 @@ public class EssenceTableBlockEntity extends BlockEntity {
                 1, dx * 0.1, dy * 0.1, dz * 0.1, 0.0);
     }
 
+    private void syncToClient() {
+        setChanged();
+        if (level != null && !level.isClientSide()) {
+            level.sendBlockUpdated(getBlockPos(), getBlockState(), getBlockState(), 3);
+        }
+    }
+
+    @Override
+    public CompoundTag getUpdateTag(HolderLookup.Provider registries) {
+        CompoundTag tag = new CompoundTag();
+        saveAdditional(tag, registries);
+        return tag;
+    }
+
+    @Override
+    public void handleUpdateTag(CompoundTag tag, HolderLookup.Provider registries) {
+        loadAdditional(tag, registries);
+    }
+
+    @Override
+    public Packet<ClientGamePacketListener> getUpdatePacket() {
+        return ClientboundBlockEntityDataPacket.create(this);
+    }
+
     @Override
     protected void saveAdditional(CompoundTag tag, HolderLookup.Provider registries) {
         super.saveAdditional(tag, registries);
-        tag.put("EssenceItem", essenceItem.save(registries, new CompoundTag()));
+        if (!essenceItem.isEmpty()) {
+            tag.put("EssenceItem", essenceItem.save(registries, new CompoundTag()));
+        }
         tag.putBoolean("Processing", processing);
         tag.putInt("ProcessTicks", processTicks);
         if (linkedEnergyTablePos != null) {
@@ -151,7 +180,11 @@ public class EssenceTableBlockEntity extends BlockEntity {
     @Override
     protected void loadAdditional(CompoundTag tag, HolderLookup.Provider registries) {
         super.loadAdditional(tag, registries);
-        this.essenceItem = ItemStack.parseOptional(registries, tag.getCompound("EssenceItem"));
+        if (tag.contains("EssenceItem")) {
+            this.essenceItem = ItemStack.parseOptional(registries, tag.getCompound("EssenceItem"));
+        } else {
+            this.essenceItem = ItemStack.EMPTY;
+        }
         this.processing = tag.getBoolean("Processing");
         this.processTicks = tag.getInt("ProcessTicks");
         if (tag.contains("LinkedPos")) {

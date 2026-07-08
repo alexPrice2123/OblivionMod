@@ -1,3 +1,4 @@
 /gamemode survival
 /give Dev minecraft:experience_bottle 64
 /gamemode creative
+/time set day

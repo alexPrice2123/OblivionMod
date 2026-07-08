@@ -4,6 +4,7 @@ import com.mojang.serialization.MapCodec;
 import net.kaupenjoe.tutorialmod.block.entity.EnergyTableBlockEntity;
 import net.kaupenjoe.tutorialmod.energy.EnergyEssenceRegistry;
 import net.minecraft.core.BlockPos;
+import net.minecraft.world.Containers;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.ItemInteractionResult;
@@ -59,6 +60,18 @@ public class EnergyTableBlock extends BaseEntityBlock {
             }
         }
         return InteractionResult.PASS;
+    }
+
+    @Override
+    protected void onRemove(BlockState state, Level level, BlockPos pos, BlockState newState, boolean movedByPiston) {
+        if (!state.is(newState.getBlock())) {
+            if (level.getBlockEntity(pos) instanceof EnergyTableBlockEntity be) {
+                if (!be.getEnergyItem().isEmpty()) {
+                    Containers.dropItemStack(level, pos.getX(), pos.getY(), pos.getZ(), be.getEnergyItem());
+                }
+            }
+        }
+        super.onRemove(state, level, pos, newState, movedByPiston);
     }
 
     @Nullable

@@ -3,6 +3,9 @@ package net.kaupenjoe.tutorialmod.block.entity;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.network.protocol.Packet;
+import net.minecraft.network.protocol.game.ClientGamePacketListener;
+import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
@@ -21,7 +24,7 @@ public class EnergyTableBlockEntity extends BlockEntity {
 
     public void setEnergyItem(ItemStack stack) {
         this.energyItem = stack;
-        setChanged();
+        syncToClient();
     }
 
     public boolean hasEnergyItem() {
@@ -44,19 +47,49 @@ public class EnergyTableBlockEntity extends BlockEntity {
             energyItem = ItemStack.EMPTY;
         }
         beingDrained = false;
-        setChanged();
+        syncToClient();
         return drained;
+    }
+
+    private void syncToClient() {
+        setChanged();
+        if (level != null && !level.isClientSide()) {
+            level.sendBlockUpdated(getBlockPos(), getBlockState(), getBlockState(), 3);
+        }
+    }
+
+    @Override
+    public CompoundTag getUpdateTag(HolderLookup.Provider registries) {
+        CompoundTag tag = new CompoundTag();
+        saveAdditional(tag, registries);
+        return tag;
+    }
+
+    @Override
+    public void handleUpdateTag(CompoundTag tag, HolderLookup.Provider registries) {
+        loadAdditional(tag, registries);
+    }
+
+    @Override
+    public Packet<ClientGamePacketListener> getUpdatePacket() {
+        return ClientboundBlockEntityDataPacket.create(this);
     }
 
     @Override
     protected void saveAdditional(CompoundTag tag, HolderLookup.Provider registries) {
         super.saveAdditional(tag, registries);
-        tag.put("EnergyItem", energyItem.save(registries, new CompoundTag()));
+        if (!energyItem.isEmpty()) {
+            tag.put("EnergyItem", energyItem.save(registries, new CompoundTag()));
+        }
     }
 
     @Override
     protected void loadAdditional(CompoundTag tag, HolderLookup.Provider registries) {
         super.loadAdditional(tag, registries);
-        this.energyItem = ItemStack.parseOptional(registries, tag.getCompound("EnergyItem"));
+        if (tag.contains("EnergyItem")) {
+            this.energyItem = ItemStack.parseOptional(registries, tag.getCompound("EnergyItem"));
+        } else {
+            this.energyItem = ItemStack.EMPTY;
+        }
     }
 }

@@ -1,6 +1,8 @@
 {
   "item.tutorialmod.extraction_core": "Extraction Core",
   "item.tutorialmod.essence": "Essence",
+  "item.tutorialmod.void_essence": "Void Essence",
+  "item.tutorialmod.void_energy": "Void Energy",
   "creativetab.tutorialmod.oblivion_tab": "Oblivion",
 
   "block.tutorialmod.essence_table": "Essence Table",

@@ -24,8 +24,8 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.ESSENCE.get());
 
                         // Add every Energy / Essence item pair here as you create them, e.g.:
-                        // output.accept(ModItems.VOID_ENERGY.get());
-                        // output.accept(ModItems.ESSENCE_OF_VOID.get());
+                        output.accept(ModItems.VOID_ENERGY.get());
+                        output.accept(ModItems.VOID_ESSENCE.get());
 
                         output.accept(ModBlocks.ENERGY_TABLE.get().asItem());
                         output.accept(ModBlocks.ESSENCE_TABLE.get().asItem());
