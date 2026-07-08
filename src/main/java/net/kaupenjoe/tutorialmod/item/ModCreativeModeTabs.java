@@ -29,6 +29,11 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.VOID_ESSENCE.get());
                         output.accept(ModItems.LIGHTNING_ENERGY.get());
                         output.accept(ModItems.LIGHTNING_ESSENCE.get());
+                        output.accept(ModItems.PURE_ENERGY.get());
+                        output.accept(ModItems.PURE_ESSENCE.get());
+                        output.accept(ModItems.CORRUPT_ENERGY.get());
+                        output.accept(ModItems.CORRUPT_ESSENCE.get());
+
                         output.accept(ModItems.ASTRAL_ENERGY.get());
                         output.accept(ModItems.ASTRAL_ESSENCE.get());
 

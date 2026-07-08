@@ -20,11 +20,20 @@ public class ModItems {
             () -> new Item(new Item.Properties()));
     public static final DeferredItem<Item> VOID_ENERGY = ITEMS.register("void_energy",
             () -> new Item(new Item.Properties()));
-
+    public static final DeferredItem<Item> PURE_ESSENCE = ITEMS.register("pure_essence",
+            () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> PURE_ENERGY = ITEMS.register("pure_energy",
+            () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> CORRUPT_ESSENCE = ITEMS.register("corrupt_essence",
+            () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> CORRUPT_ENERGY = ITEMS.register("corrupt_energy",
+            () -> new Item(new Item.Properties()));
     public static final DeferredItem<Item> LIGHTNING_ESSENCE = ITEMS.register("lightning_essence",
             () -> new Item(new Item.Properties()));
     public static final DeferredItem<Item> LIGHTNING_ENERGY = ITEMS.register("lightning_energy",
             () -> new Item(new Item.Properties()));
+
+
     public static final DeferredItem<Item> ASTRAL_ESSENCE = ITEMS.register("astral_essence",
             () -> new Item(new Item.Properties()));
     public static final DeferredItem<Item> ASTRAL_ENERGY = ITEMS.register("astral_energy",
