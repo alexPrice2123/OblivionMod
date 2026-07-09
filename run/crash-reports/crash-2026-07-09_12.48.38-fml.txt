@@ -13,7 +13,7 @@ A detailed walkthrough of the error, its code path and all known details is as f
 -- Mod loading issue --
 Details:
 	Mod file: <No mod information provided>
-	Failure message: File /home/alexander/Documents/GitHub/OblivionMod/build/classes/java/main contains mod entrypoint class net.gxb.oblivion.Oblivion for mod with id tutorialmod, which does not exist or is not in the same file.
+	Failure message: File /home/alexander/Documents/GitHub/OblivionMod/build/classes/java/main contains mod entrypoint class net.gxb.oblivion.Oblivion for mod with id oblivionmodgxb, which does not exist or is not in the same file.
 		Did you forget to update the mod id in the entrypoint?
 	Mod version: <No mod information provided>
 	Mod issues URL: <No issues URL found>

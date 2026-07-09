@@ -16,5 +16,5 @@ jdk.naming.dns/com.sun.jndi.dns=java.naming
 -DlegacyClassPath.file=/home/alexander/Documents/GitHub/OblivionMod/build/moddev/gameTestServerLegacyClasspath.txt
 -Dneoforge.enableGameTest=true
 -Dneoforge.gameTestServer=true
--Dneoforge.enabledGameTestNamespaces=oblivionmobgxb
+-Dneoforge.enabledGameTestNamespaces=oblivionmodgxb
 -Dforge.logging.markers=REGISTRIES

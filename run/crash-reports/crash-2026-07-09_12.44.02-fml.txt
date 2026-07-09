@@ -49,7 +49,7 @@ Stacktrace:
 Details:
 	Mod File: NO FILE INFO
 	Failure message: fml.modloadingissue.javafml.dangling_entrypoint
-	Failure message arg 1: tutorialmod
+	Failure message arg 1: oblivionmodgxb
 	Failure message arg 2: net.gxb.oblivion.Oblivion
 	Failure message arg 3: /home/alexander/Documents/GitHub/OblivionMod/build/classes/java/main
 	Mod Version: NO MOD INFO AVAILABLE

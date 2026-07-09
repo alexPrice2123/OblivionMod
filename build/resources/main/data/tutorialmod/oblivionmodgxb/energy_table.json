@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "SCS",
+    " D ",
+    " B "
+  ],
+  "key": {
+    "B": {
+      "item": "minecraft:diamond_block"
+    },
+    "S": {
+      "item": "minecraft:dark_oak_slab"
+    },
+    "D": {
+      "item": "minecraft:dark_oak_planks"
+    },
+    "C": {
+      "item": "oblivionmodgxb:essence_core"
+    }
+  },
+  "result": {
+    "id": "oblivionmodgxb:energy_table",
+    "count": 1
+  }
+}

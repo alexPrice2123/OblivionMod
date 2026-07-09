@@ -32,6 +32,6 @@ public class EnergyFusionRegistry {
                 return entry.getValue().get();
             }
         }
-        return null; // No matching recipe found
+        return null; // No matching oblivionmodgxb found
     }
 }

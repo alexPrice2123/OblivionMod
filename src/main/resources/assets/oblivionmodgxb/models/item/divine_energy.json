@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "tutorialmod:item/divine_energy"
+    "layer0": "oblivionmodgxb:item/divine_energy"
   }
 }

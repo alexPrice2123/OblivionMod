@@ -3,8 +3,8 @@
   "credit": "Made with Blockbench",
   "texture_size": [64, 64],
   "textures": {
-    "table": "tutorialmod:block/energy_table",
-    "particle": "tutorialmod:block/energy_table"
+    "table": "oblivionmodgxb:block/energy_table",
+    "particle": "oblivionmodgxb:block/energy_table"
   },
   "display": {
     "thirdperson_righthand": {

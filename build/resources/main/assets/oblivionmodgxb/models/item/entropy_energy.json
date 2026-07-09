@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "tutorialmod:item/entropy_energy"
+    "layer0": "oblivionmodgxb:item/entropy_energy"
   }
 }

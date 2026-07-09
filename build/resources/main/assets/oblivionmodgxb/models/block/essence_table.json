@@ -1,8 +1,8 @@
 {
   "parent": "minecraft:block/cube_bottom_top",
   "textures": {
-    "top": "tutorialmod:block/essence_table_top",
-    "bottom": "tutorialmod:block/essence_table_bottom",
-    "side": "tutorialmod:block/essence_table_side"
+    "top": "oblivionmodgxb:block/essence_table_top",
+    "bottom": "oblivionmodgxb:block/essence_table_bottom",
+    "side": "oblivionmodgxb:block/essence_table_side"
   }
 }

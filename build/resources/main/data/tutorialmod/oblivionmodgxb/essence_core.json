@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "eNe",
+    "NEN",
+    "eNe"
+  ],
+  "key": {
+    "e": {
+      "item": "oblivionmodgxb:extraction_core"
+    },
+    "N": {
+      "item": "minecraft:netherite_scrap"
+    },
+    "E": {
+      "item": "oblivionmodgxb:essence"
+    }
+  },
+  "result": {
+    "id": "oblivionmodgxb:essence_core",
+    "count": 1
+  }
+}

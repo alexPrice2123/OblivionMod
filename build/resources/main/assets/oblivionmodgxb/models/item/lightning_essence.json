@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "tutorialmod:item/lightning_essence"
+    "layer0": "oblivionmodgxb:item/lightning_essence"
   }
 }

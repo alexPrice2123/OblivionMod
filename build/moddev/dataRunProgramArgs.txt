@@ -21,7 +21,7 @@ forgedatadev
 
 # User Supplied Program Arguments
 --mod
-oblivionmobgxb
+oblivionmodgxb
 --all
 --output
 /home/alexander/Documents/GitHub/OblivionMod/src/generated/resources

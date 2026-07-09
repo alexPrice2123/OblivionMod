@@ -6,7 +6,7 @@ Description: Unexpected error
 
 java.lang.IllegalStateException: Cannot encode empty ItemStack
 	at TRANSFORMER/minecraft@1.21.1/net.minecraft.world.item.ItemStack.save(ItemStack.java:412) ~[neoforge-21.1.3-minecraft-merged.jar%23171!/:?] {re:classloading,pl:accesstransformer:B}
-	at TRANSFORMER/tutorialmod@0.0.3/entity.block.net.gxb.oblivion.EssenceTableBlockEntity.saveAdditional(EssenceTableBlockEntity.java:143) ~[%23173!/:?] {re:classloading}
+	at TRANSFORMER/oblivionmodgxb@0.0.3/entity.block.net.gxb.oblivion.EssenceTableBlockEntity.saveAdditional(EssenceTableBlockEntity.java:143) ~[%23173!/:?] {re:classloading}
 	at TRANSFORMER/minecraft@1.21.1/net.minecraft.world.level.block.entity.BlockEntity.saveWithoutMetadata(BlockEntity.java:113) ~[neoforge-21.1.3-minecraft-merged.jar%23171!/:?] {re:classloading}
 	at TRANSFORMER/minecraft@1.21.1/net.minecraft.world.level.block.entity.BlockEntity.saveWithFullMetadata(BlockEntity.java:100) ~[neoforge-21.1.3-minecraft-merged.jar%23171!/:?] {re:classloading}
 	at TRANSFORMER/neoforge@21.1.3/net.neoforged.neoforge.common.util.BlockSnapshot.getBlockEntityTag(BlockSnapshot.java:253) ~[neoforge-21.1.3-minecraft-merged.jar%23172!/:?] {re:classloading}
@@ -52,7 +52,7 @@ A detailed walkthrough of the error, its code path and all known details is as f
 Thread: Render thread
 Stacktrace:
 	at TRANSFORMER/minecraft@1.21.1/net.minecraft.world.item.ItemStack.save(ItemStack.java:412) ~[neoforge-21.1.3-minecraft-merged.jar%23171!/:?] {re:classloading,pl:accesstransformer:B}
-	at TRANSFORMER/tutorialmod@0.0.3/entity.block.net.gxb.oblivion.EssenceTableBlockEntity.saveAdditional(EssenceTableBlockEntity.java:143) ~[%23173!/:?] {re:classloading}
+	at TRANSFORMER/oblivionmodgxb@0.0.3/entity.block.net.gxb.oblivion.EssenceTableBlockEntity.saveAdditional(EssenceTableBlockEntity.java:143) ~[%23173!/:?] {re:classloading}
 	at TRANSFORMER/minecraft@1.21.1/net.minecraft.world.level.block.entity.BlockEntity.saveWithoutMetadata(BlockEntity.java:113) ~[neoforge-21.1.3-minecraft-merged.jar%23171!/:?] {re:classloading}
 	at TRANSFORMER/minecraft@1.21.1/net.minecraft.world.level.block.entity.BlockEntity.saveWithFullMetadata(BlockEntity.java:100) ~[neoforge-21.1.3-minecraft-merged.jar%23171!/:?] {re:classloading}
 	at TRANSFORMER/neoforge@21.1.3/net.neoforged.neoforge.common.util.BlockSnapshot.getBlockEntityTag(BlockSnapshot.java:253) ~[neoforge-21.1.3-minecraft-merged.jar%23172!/:?] {re:classloading}
@@ -114,7 +114,7 @@ Details:
 	Reload number: 1
 	Reload reason: initial
 	Finished: Yes
-	Packs: vanilla, mod_resources, mod/tutorialmod, mod/neoforge
+	Packs: vanilla, mod_resources, mod/oblivionmodgxb, mod/neoforge
 
 -- System Details --
 Details:
@@ -160,7 +160,7 @@ Details:
 	Type: Integrated Server (map_client.txt)
 	Graphics mode: fancy
 	Render Distance: 12/12 chunks
-	Resource Packs: vanilla, mod_resources, mod/tutorialmod, mod/neoforge
+	Resource Packs: vanilla, mod_resources, mod/oblivionmodgxb, mod/neoforge
 	Current Language: en_us
 	Locale: en_US
 	System encoding: UTF-8
@@ -168,8 +168,8 @@ Details:
 	CPU: 12x 13th Gen Intel(R) Core(TM) i5-1334U
 	Server Running: true
 	Player Count: 1 / 8; [ServerPlayer['Dev'/89, l='ServerLevel[New World]', x=-12.12, y=68.00, z=-4.43]]
-	Active Data Packs: vanilla, mod_data, mod/tutorialmod, mod/neoforge
-	Available Data Packs: bundle, trade_rebalance, vanilla, mod/neoforge, mod/tutorialmod, mod_data
+	Active Data Packs: vanilla, mod_data, mod/oblivionmodgxb, mod/neoforge
+	Available Data Packs: bundle, trade_rebalance, vanilla, mod/neoforge, mod/oblivionmodgxb, mod_data
 	Enabled Feature Flags: minecraft:vanilla
 	World Generation: Stable
 	World Seed: 8205343474743524641
@@ -189,7 +189,7 @@ Details:
 		minecraft@4.0
 	Mod List: 
 		neoforge-21.1.3-minecraft-merged.jar              |Minecraft                     |minecraft                     |1.21.1              |Manifest: NOSIGNATURE
-		main                                              |Tutorial Mod                  |tutorialmod                   |0.0.3               |Manifest: NOSIGNATURE
+		main                                              |Tutorial Mod                  |oblivionmodgxb                   |0.0.3               |Manifest: NOSIGNATURE
 		neoforge-21.1.3-minecraft-merged.jar              |NeoForge                      |neoforge                      |21.1.3              |Manifest: NOSIGNATURE
 	Crash Report UUID: ff4b8cc2-4cad-48f8-ae90-47ad70752418
 	FML: 4.0.24
