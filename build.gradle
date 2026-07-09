@@ -20,10 +20,17 @@ group = mod_group_id
 
 repositories {
     mavenLocal()
+    maven {
+        url = "https://maven.minecraftforge.net/"
+    }
 }
 
 base {
     archivesName = mod_id
+}
+
+dependencies {
+    implementation "com.github.glitchfiend:TerraBlender-neoforge:1.21.1-4.1.0.8"
 }
 
 // Mojang ships Java 21 to end users starting in 1.20.5, so mods should target Java 21.

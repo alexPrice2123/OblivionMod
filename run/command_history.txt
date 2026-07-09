@@ -8,3 +8,10 @@
 /gamemode spectator
 /gamemode creative
 /locate biome oblivionmodgxb:ancient_forest
+/tp @s -70 66 -11
+/gamemode spectator
+/locate biome oblivionmodgxb:ancient_forest
+/gamemode creative
+/tp @s -351 93 422
+/locate biome oblivionmodgxb:ancient_forest
+/tp @s -816 87 845

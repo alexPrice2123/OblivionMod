@@ -5,6 +5,7 @@ import net.gxb.oblivion.block.entity.ModBlockEntities;
 import net.gxb.oblivion.energy.ModEnergyMappings;
 import net.gxb.oblivion.item.ModCreativeModeTabs;
 import net.gxb.oblivion.item.ModItems;
+import net.gxb.oblivion.worldgen.ModRegion;
 import org.slf4j.Logger;
 import com.mojang.logging.LogUtils;
 import net.neoforged.api.distmarker.Dist;
@@ -22,6 +23,8 @@ import net.neoforged.neoforge.event.server.ServerStartingEvent;
 import net.gxb.oblivion.client.renderer.EssenceTableBlockEntityRenderer;
 import net.gxb.oblivion.client.renderer.EnergyTableBlockEntityRenderer;
 import net.neoforged.neoforge.client.event.EntityRenderersEvent;
+import net.minecraft.resources.ResourceLocation;
+import terrablender.api.Regions;
 
 @Mod(Oblivion.MOD_ID)
 public class Oblivion {
@@ -30,24 +33,20 @@ public class Oblivion {
 
     public Oblivion(IEventBus modEventBus, ModContainer modContainer) {
         modEventBus.addListener(this::commonSetup);
-
         NeoForge.EVENT_BUS.register(this);
-
         ModCreativeModeTabs.register(modEventBus);
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
         ModBlockEntities.register(modEventBus);
-
-        // REMOVED ModEnergyMappings.register() from here because it was too early!
-
         modEventBus.addListener(this::addCreative);
-
         modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
         event.enqueueWork(() -> {
-            ModEnergyMappings.init(); // Use init() instead of register()
+            ModEnergyMappings.init();
+            Regions.register(new ModRegion(
+                    ResourceLocation.fromNamespaceAndPath(Oblivion.MOD_ID, "overworld"), 10));
         });
     }
 
