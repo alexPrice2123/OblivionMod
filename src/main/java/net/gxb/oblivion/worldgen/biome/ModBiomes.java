@@ -8,6 +8,7 @@ import net.minecraft.world.level.biome.Biome;
 
 public class ModBiomes {
     public static final ResourceKey<Biome> ANCIENT_FOREST = registerKey("ancient_forest");
+    public static final ResourceKey<Biome> SPIRIT_PEAKS = registerKey("spirit_peaks");
 
     private static ResourceKey<Biome> registerKey(String name) {
         return ResourceKey.create(Registries.BIOME,
