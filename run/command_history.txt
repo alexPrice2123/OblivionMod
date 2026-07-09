@@ -4,3 +4,7 @@
 /time set day
 /gamerule doDaylightCycle false
 /time set day
+/locate biome oblivionmodgxb:ancient_forest
+/gamemode spectator
+/gamemode creative
+/locate biome oblivionmodgxb:ancient_forest
