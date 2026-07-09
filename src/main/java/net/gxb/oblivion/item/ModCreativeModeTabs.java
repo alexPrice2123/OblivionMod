@@ -18,7 +18,7 @@ public class ModCreativeModeTabs {
     public static final Supplier<CreativeModeTab> OBLIVION_TAB = CREATIVE_MODE_TAB.register("oblivion_tab",
             () -> CreativeModeTab.builder()
                     .icon(() -> new ItemStack(ModItems.ESSENCE.get()))
-                    .title(Component.translatable("creativetab.tutorialmod.oblivion_tab"))
+                    .title(Component.translatable("creativetab.oblivionmodgxb.oblivion_tab"))
                     .displayItems((itemDisplayParameters, output) -> {
                         output.accept(ModItems.EXTRACTION_CORE.get());
                         output.accept(ModItems.ESSENCE.get());

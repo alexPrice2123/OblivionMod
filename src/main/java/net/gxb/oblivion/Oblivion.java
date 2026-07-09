@@ -25,7 +25,7 @@ import net.neoforged.neoforge.client.event.EntityRenderersEvent;
 
 @Mod(Oblivion.MOD_ID)
 public class Oblivion {
-    public static final String MOD_ID = "oblivionmobgxb";
+    public static final String MOD_ID = "oblivionmodgxb";
     private static final Logger LOGGER = LogUtils.getLogger();
 
     public Oblivion(IEventBus modEventBus, ModContainer modContainer) {
