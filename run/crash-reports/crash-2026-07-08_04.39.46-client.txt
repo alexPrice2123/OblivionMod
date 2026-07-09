@@ -6,7 +6,7 @@ Description: Unexpected error
 
 java.lang.IllegalStateException: Cannot encode empty ItemStack
 	at TRANSFORMER/minecraft@1.21.1/net.minecraft.world.item.ItemStack.save(ItemStack.java:412) ~[neoforge-21.1.3-minecraft-merged.jar%23171!/:?] {re:classloading,pl:accesstransformer:B}
-	at TRANSFORMER/tutorialmod@0.0.3/net.kaupenjoe.tutorialmod.block.entity.EssenceTableBlockEntity.saveAdditional(EssenceTableBlockEntity.java:143) ~[%23173!/:?] {re:classloading}
+	at TRANSFORMER/tutorialmod@0.0.3/entity.block.net.gxb.oblivion.EssenceTableBlockEntity.saveAdditional(EssenceTableBlockEntity.java:143) ~[%23173!/:?] {re:classloading}
 	at TRANSFORMER/minecraft@1.21.1/net.minecraft.world.level.block.entity.BlockEntity.saveWithoutMetadata(BlockEntity.java:113) ~[neoforge-21.1.3-minecraft-merged.jar%23171!/:?] {re:classloading}
 	at TRANSFORMER/minecraft@1.21.1/net.minecraft.world.level.block.entity.BlockEntity.saveWithFullMetadata(BlockEntity.java:100) ~[neoforge-21.1.3-minecraft-merged.jar%23171!/:?] {re:classloading}
 	at TRANSFORMER/neoforge@21.1.3/net.neoforged.neoforge.common.util.BlockSnapshot.getBlockEntityTag(BlockSnapshot.java:253) ~[neoforge-21.1.3-minecraft-merged.jar%23172!/:?] {re:classloading}
@@ -52,7 +52,7 @@ A detailed walkthrough of the error, its code path and all known details is as f
 Thread: Render thread
 Stacktrace:
 	at TRANSFORMER/minecraft@1.21.1/net.minecraft.world.item.ItemStack.save(ItemStack.java:412) ~[neoforge-21.1.3-minecraft-merged.jar%23171!/:?] {re:classloading,pl:accesstransformer:B}
-	at TRANSFORMER/tutorialmod@0.0.3/net.kaupenjoe.tutorialmod.block.entity.EssenceTableBlockEntity.saveAdditional(EssenceTableBlockEntity.java:143) ~[%23173!/:?] {re:classloading}
+	at TRANSFORMER/tutorialmod@0.0.3/entity.block.net.gxb.oblivion.EssenceTableBlockEntity.saveAdditional(EssenceTableBlockEntity.java:143) ~[%23173!/:?] {re:classloading}
 	at TRANSFORMER/minecraft@1.21.1/net.minecraft.world.level.block.entity.BlockEntity.saveWithoutMetadata(BlockEntity.java:113) ~[neoforge-21.1.3-minecraft-merged.jar%23171!/:?] {re:classloading}
 	at TRANSFORMER/minecraft@1.21.1/net.minecraft.world.level.block.entity.BlockEntity.saveWithFullMetadata(BlockEntity.java:100) ~[neoforge-21.1.3-minecraft-merged.jar%23171!/:?] {re:classloading}
 	at TRANSFORMER/neoforge@21.1.3/net.neoforged.neoforge.common.util.BlockSnapshot.getBlockEntityTag(BlockSnapshot.java:253) ~[neoforge-21.1.3-minecraft-merged.jar%23172!/:?] {re:classloading}

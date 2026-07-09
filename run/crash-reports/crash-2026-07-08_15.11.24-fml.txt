@@ -48,7 +48,7 @@ Stacktrace:
 -- MOD tutorialmod --
 Details:
 	Caused by 0: java.lang.ExceptionInInitializerError
-		at TRANSFORMER/tutorialmod@0.0.3/net.kaupenjoe.tutorialmod.TutorialMod.<init>(TutorialMod.java:38) ~[%23173!/:?] {re:classloading}
+		at TRANSFORMER/tutorialmod@0.0.3/net.gxb.oblivion.Oblivion.<init>(TutorialMod.java:38) ~[%23173!/:?] {re:classloading}
 		at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62) ~[?:?] {}
 		at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502) ~[?:?] {}
 		at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486) ~[?:?] {}
@@ -73,8 +73,8 @@ Stacktrace:
 	at TRANSFORMER/neoforge@21.1.3/net.neoforged.neoforge.registries.DeferredRegister.register(DeferredRegister.java:219) ~[neoforge-21.1.3-minecraft-merged.jar%23172!/:?] {re:classloading}
 	at TRANSFORMER/neoforge@21.1.3/net.neoforged.neoforge.registries.DeferredRegister$Items.register(DeferredRegister.java:454) ~[neoforge-21.1.3-minecraft-merged.jar%23172!/:?] {re:classloading}
 	at TRANSFORMER/neoforge@21.1.3/net.neoforged.neoforge.registries.DeferredRegister$Items.register(DeferredRegister.java:467) ~[neoforge-21.1.3-minecraft-merged.jar%23172!/:?] {re:classloading}
-	at TRANSFORMER/tutorialmod@0.0.3/net.kaupenjoe.tutorialmod.item.ModItems.<clinit>(ModItems.java:28) ~[%23173!/:?] {re:classloading}
-	at TRANSFORMER/tutorialmod@0.0.3/net.kaupenjoe.tutorialmod.TutorialMod.<init>(TutorialMod.java:38) ~[%23173!/:?] {re:classloading}
+	at TRANSFORMER/tutorialmod@0.0.3/item.net.gxb.oblivion.ModItems.<clinit>(ModItems.java:28) ~[%23173!/:?] {re:classloading}
+	at TRANSFORMER/tutorialmod@0.0.3/net.gxb.oblivion.Oblivion.<init>(TutorialMod.java:38) ~[%23173!/:?] {re:classloading}
 	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62) ~[?:?] {}
 	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502) ~[?:?] {}
 	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486) ~[?:?] {}

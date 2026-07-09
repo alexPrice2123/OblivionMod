@@ -6,11 +6,11 @@ Description: Exception ticking world
 
 java.lang.IllegalStateException: Cannot encode empty ItemStack
 	at TRANSFORMER/minecraft@1.21.1/net.minecraft.world.item.ItemStack.save(ItemStack.java:412) ~[neoforge-21.1.3-minecraft-merged.jar%23171!/:?] {re:classloading,pl:accesstransformer:B}
-	at TRANSFORMER/tutorialmod@0.0.3/net.kaupenjoe.tutorialmod.block.entity.EssenceTableBlockEntity.saveAdditional(EssenceTableBlockEntity.java:170) ~[%23173!/:?] {re:classloading}
-	at TRANSFORMER/tutorialmod@0.0.3/net.kaupenjoe.tutorialmod.block.entity.EssenceTableBlockEntity.getUpdateTag(EssenceTableBlockEntity.java:153) ~[%23173!/:?] {re:classloading}
+	at TRANSFORMER/tutorialmod@0.0.3/entity.block.net.gxb.oblivion.EssenceTableBlockEntity.saveAdditional(EssenceTableBlockEntity.java:170) ~[%23173!/:?] {re:classloading}
+	at TRANSFORMER/tutorialmod@0.0.3/entity.block.net.gxb.oblivion.EssenceTableBlockEntity.getUpdateTag(EssenceTableBlockEntity.java:153) ~[%23173!/:?] {re:classloading}
 	at TRANSFORMER/minecraft@1.21.1/net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket.create(ClientboundBlockEntityDataPacket.java:35) ~[neoforge-21.1.3-minecraft-merged.jar%23171!/:?] {re:classloading}
 	at TRANSFORMER/minecraft@1.21.1/net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket.create(ClientboundBlockEntityDataPacket.java:39) ~[neoforge-21.1.3-minecraft-merged.jar%23171!/:?] {re:classloading}
-	at TRANSFORMER/tutorialmod@0.0.3/net.kaupenjoe.tutorialmod.block.entity.EssenceTableBlockEntity.getUpdatePacket(EssenceTableBlockEntity.java:164) ~[%23173!/:?] {re:classloading}
+	at TRANSFORMER/tutorialmod@0.0.3/entity.block.net.gxb.oblivion.EssenceTableBlockEntity.getUpdatePacket(EssenceTableBlockEntity.java:164) ~[%23173!/:?] {re:classloading}
 	at TRANSFORMER/minecraft@1.21.1/net.minecraft.server.level.ChunkHolder.broadcastBlockEntity(ChunkHolder.java:225) ~[neoforge-21.1.3-minecraft-merged.jar%23171!/:?] {re:classloading}
 	at TRANSFORMER/minecraft@1.21.1/net.minecraft.server.level.ChunkHolder.broadcastBlockEntityIfNeeded(ChunkHolder.java:218) ~[neoforge-21.1.3-minecraft-merged.jar%23171!/:?] {re:classloading}
 	at TRANSFORMER/minecraft@1.21.1/net.minecraft.server.level.ChunkHolder.broadcastChanges(ChunkHolder.java:196) ~[neoforge-21.1.3-minecraft-merged.jar%23171!/:?] {re:classloading}
@@ -34,11 +34,11 @@ A detailed walkthrough of the error, its code path and all known details is as f
 Thread: Server thread
 Stacktrace:
 	at TRANSFORMER/minecraft@1.21.1/net.minecraft.world.item.ItemStack.save(ItemStack.java:412) ~[neoforge-21.1.3-minecraft-merged.jar%23171!/:?] {re:classloading,pl:accesstransformer:B}
-	at TRANSFORMER/tutorialmod@0.0.3/net.kaupenjoe.tutorialmod.block.entity.EssenceTableBlockEntity.saveAdditional(EssenceTableBlockEntity.java:170) ~[%23173!/:?] {re:classloading}
-	at TRANSFORMER/tutorialmod@0.0.3/net.kaupenjoe.tutorialmod.block.entity.EssenceTableBlockEntity.getUpdateTag(EssenceTableBlockEntity.java:153) ~[%23173!/:?] {re:classloading}
+	at TRANSFORMER/tutorialmod@0.0.3/entity.block.net.gxb.oblivion.EssenceTableBlockEntity.saveAdditional(EssenceTableBlockEntity.java:170) ~[%23173!/:?] {re:classloading}
+	at TRANSFORMER/tutorialmod@0.0.3/entity.block.net.gxb.oblivion.EssenceTableBlockEntity.getUpdateTag(EssenceTableBlockEntity.java:153) ~[%23173!/:?] {re:classloading}
 	at TRANSFORMER/minecraft@1.21.1/net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket.create(ClientboundBlockEntityDataPacket.java:35) ~[neoforge-21.1.3-minecraft-merged.jar%23171!/:?] {re:classloading}
 	at TRANSFORMER/minecraft@1.21.1/net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket.create(ClientboundBlockEntityDataPacket.java:39) ~[neoforge-21.1.3-minecraft-merged.jar%23171!/:?] {re:classloading}
-	at TRANSFORMER/tutorialmod@0.0.3/net.kaupenjoe.tutorialmod.block.entity.EssenceTableBlockEntity.getUpdatePacket(EssenceTableBlockEntity.java:164) ~[%23173!/:?] {re:classloading}
+	at TRANSFORMER/tutorialmod@0.0.3/entity.block.net.gxb.oblivion.EssenceTableBlockEntity.getUpdatePacket(EssenceTableBlockEntity.java:164) ~[%23173!/:?] {re:classloading}
 	at TRANSFORMER/minecraft@1.21.1/net.minecraft.server.level.ChunkHolder.broadcastBlockEntity(ChunkHolder.java:225) ~[neoforge-21.1.3-minecraft-merged.jar%23171!/:?] {re:classloading}
 	at TRANSFORMER/minecraft@1.21.1/net.minecraft.server.level.ChunkHolder.broadcastBlockEntityIfNeeded(ChunkHolder.java:218) ~[neoforge-21.1.3-minecraft-merged.jar%23171!/:?] {re:classloading}
 	at TRANSFORMER/minecraft@1.21.1/net.minecraft.server.level.ChunkHolder.broadcastChanges(ChunkHolder.java:196) ~[neoforge-21.1.3-minecraft-merged.jar%23171!/:?] {re:classloading}

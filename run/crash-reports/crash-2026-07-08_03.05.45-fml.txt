@@ -47,7 +47,7 @@ Stacktrace:
 	at TRANSFORMER/neoforge@21.1.3/net.neoforged.neoforge.common.NeoForge.lambda$static$0(NeoForge.java:19) ~[neoforge-21.1.3-minecraft-merged.jar%23172!/:?] {re:classloading}
 -- MOD tutorialmod --
 Details:
-	Caused by 0: java.lang.IllegalArgumentException: Method public static void net.kaupenjoe.tutorialmod.TutorialDataGen.gatherData(net.neoforged.neoforge.data.event.GatherDataEvent) has @SubscribeEvent annotation, but takes an argument that is not valid for this busclass net.neoforged.neoforge.data.event.GatherDataEvent
+	Caused by 0: java.lang.IllegalArgumentException: Method public static void net.gxb.oblivion.OblivionDataGen.gatherData(net.neoforged.neoforge.data.event.GatherDataEvent) has @SubscribeEvent annotation, but takes an argument that is not valid for this busclass net.neoforged.neoforge.data.event.GatherDataEvent
 		at MC-BOOTSTRAP/net.neoforged.bus/net.neoforged.bus.EventBus.registerListener(EventBus.java:164) ~[bus-8.0.1.jar%23131!/:?] {}
 		at MC-BOOTSTRAP/net.neoforged.bus/net.neoforged.bus.EventBus.register(EventBus.java:91) ~[bus-8.0.1.jar%23131!/:?] {}
 		at MC-BOOTSTRAP/fml_loader@4.0.24/net.neoforged.fml.javafmlmod.AutomaticEventSubscriber.lambda$inject$4(AutomaticEventSubscriber.java:60) ~[loader-4.0.24.jar%23127!/:4.0] {}
