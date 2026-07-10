@@ -1,5 +1,6 @@
 package net.gxb.oblivion.worldgen.tree;
 
+import net.gxb.oblivion.block.ModBlocks;
 import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.level.block.Blocks;
@@ -16,10 +17,10 @@ public class ModTreeConfiguredFeatures {
 
     public static void bootstrap(BootstrapContext<ConfiguredFeature<?, ?>> context) {
 
-        BlockState log = Blocks.DARK_OAK_LOG.defaultBlockState(); // swap for your real log block
-        BlockState leaves = Blocks.DARK_OAK_LEAVES.defaultBlockState(); // swap for your real leaves block
+        BlockState log = ModBlocks.SPIRIT_LOG.get().defaultBlockState(); // swap for your real log block
+        BlockState leaves = ModBlocks.SPIRIT_LEAVES.get().defaultBlockState(); // swap for your real leaves block
 
-        // SHORT variant — 2-wide trunk, roughly under ~32 blocks tall
+        // SHORT variant — 2-wide trunk, roughly under ~32 block tall
         context.register(ModTreeFeatures.SPIRIT_TREE_SHORT_CONFIGURED,
                 new ConfiguredFeature<>(
                         Feature.TREE,
@@ -32,7 +33,7 @@ public class ModTreeConfiguredFeatures {
                         ).build()
                 ));
 
-        // TALL variant — scaled-up 2-wide trunk reading as noticeably thicker/taller, 32+ blocks
+        // TALL variant — scaled-up 2-wide trunk reading as noticeably thicker/taller, 32+ block
         context.register(ModTreeFeatures.SPIRIT_TREE_TALL_CONFIGURED,
                 new ConfiguredFeature<>(
                         Feature.TREE,

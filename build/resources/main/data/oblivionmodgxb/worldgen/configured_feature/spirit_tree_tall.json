@@ -29,7 +29,7 @@
     "foliage_provider": {
       "type": "minecraft:simple_state_provider",
       "state": {
-        "Name": "minecraft:dark_oak_leaves",
+        "Name": "oblivionmodgxb:spirit_leaves",
         "Properties": {
           "distance": "7",
           "persistent": "false",
@@ -54,7 +54,7 @@
     "trunk_provider": {
       "type": "minecraft:simple_state_provider",
       "state": {
-        "Name": "minecraft:dark_oak_log",
+        "Name": "oblivionmodgxb:spirit_log",
         "Properties": {
           "axis": "y"
         }

@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "top": "oblivionmodgxb:block/spirit_planks",
+    "bottom": "oblivionmodgxb:block/spirit_planks",
+    "side": "oblivionmodgxb:block/spirit_planks"
+  }
+}

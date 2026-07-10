@@ -49,6 +49,10 @@ public class ModCreativeModeTabs {
 
                         output.accept(ModBlocks.ENERGY_TABLE.get().asItem());
                         output.accept(ModBlocks.ESSENCE_TABLE.get().asItem());
+                        output.accept(ModBlocks.SPIRIT_LOG.get().asItem());
+                        output.accept(ModBlocks.SPIRIT_LEAVES.get().asItem());
+                        output.accept(ModBlocks.STRIPPED_SPIRIT_LOG.get().asItem());
+                        output.accept(ModBlocks.SPIRIT_PLANKS.get().asItem());
                     }).build());
 
     public static void register(IEventBus eventBus) {

@@ -1,6 +1,3 @@
-/gamemode survival
-/give Dev minecraft:experience_bottle 64
-/gamemode creative
 /time set day
 /gamerule doDaylightCycle false
 /time set day
@@ -36,3 +33,18 @@
 /tp @s 254 98 323
 /locate biome oblivionmodgxb:ancient_forest
 /tp @s -5 79 128
+/locate biome oblivionmodgxb:ancient_forest
+/tp @s -90 96 -195
+/locate biome oblivionmodgxb:ancient_forest
+/tick rate 2000
+/tick rate 20000
+/tick rate 10000
+/time set day
+/tick rate 20
+/gamemode survival
+/gamemode creative
+/gamemode survival
+/gamemode creative
+/weather clear
+/gamemode survival
+/give @s minecraft:diamond_axe

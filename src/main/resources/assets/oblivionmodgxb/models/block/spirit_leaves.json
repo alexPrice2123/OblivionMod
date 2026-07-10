@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "top": "oblivionmodgxb:block/spirit_leaves",
+    "bottom": "oblivionmodgxb:block/spirit_leaves",
+    "side": "oblivionmodgxb:block/spirit_leaves"
+  }
+}

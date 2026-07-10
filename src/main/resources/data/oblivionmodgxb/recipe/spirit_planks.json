@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "oblivionmodgxb:spirit_log"
+    }
+  ],
+  "result": {
+    "id": "oblivionmodgxb:spirit_planks",
+    "count": 4
+  }
+}
