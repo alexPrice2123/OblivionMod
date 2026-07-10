@@ -27,6 +27,7 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.levelgen.SurfaceRules;
 import terrablender.api.Regions;
 import terrablender.api.SurfaceRuleManager;
+import net.gxb.oblivion.worldgen.tree.ModTrunkPlacerTypes;
 
 @Mod(Oblivion.MOD_ID)
 public class Oblivion {
@@ -48,6 +49,7 @@ public class Oblivion {
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
         ModBlockEntities.register(modEventBus);
+        ModTrunkPlacerTypes.TRUNK_PLACER_TYPES.register(modEventBus); // <-- add it here
 
         modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
     }

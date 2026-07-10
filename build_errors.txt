@@ -1,0 +1,47 @@
+Reusing configuration cache.
+> Task :jarJar NO-SOURCE
+> Task :processTestResources NO-SOURCE
+> Task :processResources UP-TO-DATE
+> Task :createArtifactManifest UP-TO-DATE
+> Task :createMinecraftArtifacts UP-TO-DATE
+
+> Task :compileJava FAILED
+/home/alexander/Documents/GitHub/OblivionMod/src/main/java/net/gxb/oblivion/worldgen/tree/ModTreePlacedFeatures.java:5: error: class, interface, enum, or record expected
+import net.minecraft.data.worldgen.BootstrapContext;/
+                                                    ^
+/home/alexander/Documents/GitHub/OblivionMod/src/main/java/net/gxb/oblivion/worldgen/tree/ModTreePlacedFeatures.java:7: error: class, interface, enum, or record expected
+import net.minecraft.world.level.block.Blocks;
+^
+/home/alexander/Documents/GitHub/OblivionMod/src/main/java/net/gxb/oblivion/worldgen/tree/ModTreePlacedFeatures.java:8: error: class, interface, enum, or record expected
+import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
+^
+/home/alexander/Documents/GitHub/OblivionMod/src/main/java/net/gxb/oblivion/worldgen/tree/ModTreePlacedFeatures.java:9: error: class, interface, enum, or record expected
+import net.minecraft.world.level.levelgen.placement.BiomeFilter;
+^
+/home/alexander/Documents/GitHub/OblivionMod/src/main/java/net/gxb/oblivion/worldgen/tree/ModTreePlacedFeatures.java:10: error: class, interface, enum, or record expected
+import net.minecraft.world.level.levelgen.placement.InSquarePlacement;
+^
+/home/alexander/Documents/GitHub/OblivionMod/src/main/java/net/gxb/oblivion/worldgen/tree/ModTreePlacedFeatures.java:11: error: class, interface, enum, or record expected
+import net.minecraft.world.level.levelgen.placement.PlacedFeature;
+^
+/home/alexander/Documents/GitHub/OblivionMod/src/main/java/net/gxb/oblivion/worldgen/tree/ModTreePlacedFeatures.java:12: error: class, interface, enum, or record expected
+import net.minecraft.world.level.levelgen.placement.RarityFilter;
+^
+/home/alexander/Documents/GitHub/OblivionMod/src/main/java/net/gxb/oblivion/worldgen/tree/ModTreePlacedFeatures.java:14: error: class, interface, enum, or record expected
+import java.util.List;
+^
+8 errors
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':compileJava'.
+> Compilation failed; see the compiler error output for details.
+
+* Try:
+> Run with --info option to get more log output.
+> Run with --scan to get full insights.
+
+BUILD FAILED in 599ms
+4 actionable tasks: 1 executed, 3 up-to-date
+Configuration cache entry reused.

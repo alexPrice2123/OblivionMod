@@ -9,11 +9,11 @@
   "downfall": 0.5,
   "effects": {
     "fog_color": 12638463,
-    "foliage_color": 2049556,
-    "grass_color": 3037982,
+    "foliage_color": 4615724,
+    "grass_color": 4615724,
     "sky_color": 9286143,
-    "water_color": 4159204,
-    "water_fog_color": 329011
+    "water_color": 2251475,
+    "water_fog_color": 2254772
   },
   "features": [
     [],
@@ -65,9 +65,9 @@
     [],
     [
       "minecraft:glow_lichen",
-      "minecraft:trees_windswept_forest",
-      "minecraft:forest_flowers",
-      "minecraft:patch_grass_badlands",
+      "oblivionmodgxb:spirit_tree_short",
+      "oblivionmodgxb:spirit_tree_tall",
+      "minecraft:patch_grass_jungle",
       "minecraft:brown_mushroom_normal",
       "minecraft:red_mushroom_normal"
     ]

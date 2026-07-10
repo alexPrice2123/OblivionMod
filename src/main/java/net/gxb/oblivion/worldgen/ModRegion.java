@@ -25,12 +25,12 @@ public class ModRegion extends Region {
         // Narrow-ish weirdness/temperature window vs. a full vanilla-replace = rarer than plain Forest.
         mapper.accept(Pair.of(
                 Climate.parameters(
-                        Climate.Parameter.span(0.2F, 0.6F),     // temperature — temperate band only
-                        Climate.Parameter.span(0.3F, 1.0F),     // humidity — humid
-                        Climate.Parameter.span(-0.3F, 0.4F),    // continentalness — WIDE = bigger patches
-                        Climate.Parameter.span(-0.3F, 0.3F),    // erosion — WIDE = bigger patches
-                        Climate.Parameter.point(0.0F),          // depth
-                        Climate.Parameter.span(-0.1F, 0.1F),    // weirdness — narrow-ish = rarer
+                        Climate.Parameter.span(0.25F, 0.5F),    // temperature
+                        Climate.Parameter.span(0.4F, 0.9F),     // humidity
+                        Climate.Parameter.span(-0.05F, 0.12F),  // continentalness — narrower span = smaller patches
+                        Climate.Parameter.span(-0.15F, 0.15F),  // erosion — narrower span = smaller patches
+                        Climate.Parameter.point(0.0F),     // depth
+                        Climate.Parameter.span(-0.05F, 0.05F),  // weirdness
                         0.0F
                 ),
                 ModBiomes.ANCIENT_FOREST
@@ -40,12 +40,12 @@ public class ModRegion extends Region {
         // but only at high "weirdness" (mountainous peaks/valleys terrain) and low erosion (jagged terrain).
         mapper.accept(Pair.of(
                 Climate.parameters(
-                        Climate.Parameter.span(0.2F, 0.6F),     // same climate zone as Ancient Forest
-                        Climate.Parameter.span(0.2F, 0.6F),
-                        Climate.Parameter.span(0.4F, 1.0F),     // Continentalness: High values mean inland/mountains
-                        Climate.Parameter.span(-1.0F, -0.7F),    // Erosion: -1.0 to -0.7 targets vanilla's "Jagged Peaks" selector
-                        Climate.Parameter.point(0.0F),          // Depth
-                        Climate.Parameter.span(0.7F, 1.0F),     // Weirdness: High positive slice for maximum peak variation
+                        Climate.Parameter.span(0.25F, 0.5F),     // same temp zone as forest
+                        Climate.Parameter.span(0.2F, 0.6F),        //humidity
+                        Climate.Parameter.span(0.4F, 1.0F),     // continentalness — narrower span = smaller patches
+                        Climate.Parameter.span(-1.0F, -0.7F),    // erosion — narrower span = smaller patches
+                        Climate.Parameter.point(0.0F),          // depth
+                        Climate.Parameter.span(0.7F, 1.0F),     // weirdness
                         0.0F
                 ),
                 ModBiomes.SPIRIT_PEAKS

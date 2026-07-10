@@ -30,3 +30,9 @@
 /tp @s 536 68 -1008
 /locate biome oblivionmodgxb:spirit_peaks
 /tp @s 1487 63 249
+/locate biome oblivionmodgxb:ancient_forest
+/tp @s -360 107 362
+/locate biome oblivionmodgxb:ancient_forest
+/tp @s 254 98 323
+/locate biome oblivionmodgxb:ancient_forest
+/tp @s -5 79 128

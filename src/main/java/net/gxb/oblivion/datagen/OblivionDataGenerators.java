@@ -9,6 +9,8 @@ import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.common.data.DatapackBuiltinEntriesProvider;
 import net.neoforged.neoforge.data.event.GatherDataEvent;
+import net.gxb.oblivion.worldgen.tree.ModTreeConfiguredFeatures;
+import net.gxb.oblivion.worldgen.tree.ModTreePlacedFeatures;
 
 import java.util.Set;
 
@@ -16,7 +18,9 @@ import java.util.Set;
 public class OblivionDataGenerators {
 
     public static final RegistrySetBuilder WORLDGEN_BUILDER = new RegistrySetBuilder()
-            .add(Registries.BIOME, ModBiomesGenerator::bootstrap);
+            .add(Registries.BIOME, ModBiomesGenerator::bootstrap)
+            .add(Registries.CONFIGURED_FEATURE, ModTreeConfiguredFeatures::bootstrap)
+            .add(Registries.PLACED_FEATURE, ModTreePlacedFeatures::bootstrap);
 
     @SubscribeEvent
     public static void gatherData(GatherDataEvent event) {
