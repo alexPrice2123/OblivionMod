@@ -21,39 +21,36 @@ public class ModRegion extends Region {
     @Override
     public void addBiomes(Registry<Biome> registry, Consumer<Pair<Climate.ParameterPoint, ResourceKey<Biome>>> mapper) {
 
-        // Import ALL of vanilla's real, correctly-sized biome map with zero replacements.
-        // This gives Ancient Forest genuine neighbors, so it can no longer balloon into
-        // unclaimed space via fallback — it only wins where it's the closest match.
-        this.addModifiedVanillaOverworldBiomes(mapper, builder -> {
-            // intentionally empty — no replaceBiome calls, just importing vanilla as-is
-        });
+// Ancient Forest
+        biome(mapper, ModBiomes.ANCIENT_FOREST,
+                Climate.Parameter.span(0.35F, 0.4F),
+                Climate.Parameter.span(0.6F, 0.7F),
+                Climate.Parameter.span(0.3F, 0.8F),      // same land-only range
+                Climate.Parameter.span(-1.0F, -0.9F),
+                Climate.Parameter.point(0.0F),
+                Climate.Parameter.span(0.5F, 1.0F));
 
-        // Ancient Forest — widened for a bigger footprint
-        mapper.accept(Pair.of(
-                Climate.parameters(
-                        Climate.Parameter.span(0.15F, 0.9F),   // temperature — slightly wider
-                        Climate.Parameter.span(0.3F, 1.0F),    // humidity — slightly wider
-                        Climate.Parameter.span(0.0F, 0.9F),    // continentalness — WIDER, still land-only
-                        Climate.Parameter.span(0.0F, 1.0F),   // erosion — WIDER
-                        Climate.Parameter.point(0.0F),
-                        Climate.Parameter.span(-0.3F, 0.9F),   // weirdness — wider, less rare
-                        0.0F
-                ),
-                ModBiomes.ANCIENT_FOREST
-        ));
+// Spirit Peaks
+        biome(mapper, ModBiomes.SPIRIT_PEAKS,
+                Climate.Parameter.span(0.35F, 0.4F),
+                Climate.Parameter.span(0.7F, 1.0F),
+                Climate.Parameter.span(0.15F, 0.4F),      // same land-only range
+                Climate.Parameter.span(-1.0F, -0.9F),
+                Climate.Parameter.point(0.0F),
+                Climate.Parameter.span(0.7F, 1.0F));
+    }
 
-// Spirit Peaks — kept narrow/rare, unaffected by Ancient Forest's growth
+    private void biome(Consumer<Pair<Climate.ParameterPoint, ResourceKey<Biome>>> mapper,
+                       ResourceKey<Biome> biome,
+                       Climate.Parameter temperature,
+                       Climate.Parameter humidity,
+                       Climate.Parameter continentalness,
+                       Climate.Parameter erosion,
+                       Climate.Parameter depth,
+                       Climate.Parameter weirdness) {
         mapper.accept(Pair.of(
-                Climate.parameters(
-                        Climate.Parameter.span(-0.1F, 0.15F),   // temperature — slightly wider
-                        Climate.Parameter.span(0.3F, 1.0F),    // humidity — slightly wider
-                        Climate.Parameter.span(0.8F, 0.9F),    // continentalness — WIDER, still land-only
-                        Climate.Parameter.span(-1.0F, 1.0F),   // erosion — WIDER
-                        Climate.Parameter.point(0.0F),
-                        Climate.Parameter.span(-0.2F, 0.2F),   // weirdness — wider, less rare
-                        0.0F
-                ),
-                ModBiomes.SPIRIT_PEAKS
+                Climate.parameters(temperature, humidity, continentalness, erosion, depth, weirdness, 0.0F),
+                biome
         ));
     }
 }
