@@ -1,7 +1,7 @@
-// 1.21.1	2026-07-10T15:03:24.539289142	Registries
+// 1.21.1	2026-07-11T01:53:45.104085025	Registries
 f2e2eb678b550e2ba9bea1d135158b7df9f2de8a data/oblivionmodgxb/worldgen/biome/ancient_forest.json
 8950742fa2223be2c207c03f2f14cd9365248ac6 data/oblivionmodgxb/worldgen/biome/spirit_peaks.json
 989b3c723d12272495e635560ebc96cdade59fb7 data/oblivionmodgxb/worldgen/configured_feature/spirit_tree_short.json
 be72af24276cde08be25c1474862cf999495958a data/oblivionmodgxb/worldgen/configured_feature/spirit_tree_tall.json
-d2d03c21dc570b58955c4464b5652d867d15a79f data/oblivionmodgxb/worldgen/placed_feature/spirit_tree_short.json
-c5caf681fb9c3f36d276711d9afb41efc2a0dc84 data/oblivionmodgxb/worldgen/placed_feature/spirit_tree_tall.json
+3923cb486eff42b758272f8b875a0ac5c94a7750 data/oblivionmodgxb/worldgen/placed_feature/spirit_tree_short.json
+2dc58caeda8a71b9c95509a983d51e8744782c46 data/oblivionmodgxb/worldgen/placed_feature/spirit_tree_tall.json

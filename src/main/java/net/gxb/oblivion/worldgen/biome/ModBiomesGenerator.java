@@ -12,6 +12,7 @@ import net.minecraft.world.level.levelgen.carver.ConfiguredWorldCarver;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 import net.minecraft.world.level.levelgen.GenerationStep;
 import net.gxb.oblivion.worldgen.tree.ModTreeFeatures;
+import net.gxb.oblivion.worldgen.ModSpikeConfiguredFeatures;
 
 
 public class ModBiomesGenerator {
@@ -46,6 +47,7 @@ public class ModBiomesGenerator {
         BiomeDefaultFeatures.addJungleGrass(genBuilder);
         BiomeDefaultFeatures.addDefaultMushrooms(genBuilder);
 
+
         return new Biome.BiomeBuilder()
                 .hasPrecipitation(true)
                 .temperature(0.7F)
@@ -75,7 +77,7 @@ public class ModBiomesGenerator {
         BiomeDefaultFeatures.addMountainTrees(genBuilder); // sparse spruce, mountain-appropriate
         BiomeDefaultFeatures.addDefaultOres(genBuilder);
         BiomeDefaultFeatures.addFossilDecoration(genBuilder); // mountains-flavored ore, thematically fits "spirit"/rare
-
+        genBuilder.addFeature(GenerationStep.Decoration.SURFACE_STRUCTURES, ModSpikeConfiguredFeatures.SPIRIT_SPIKE_PLACED);
         return new Biome.BiomeBuilder()
                 .hasPrecipitation(true)
                 .temperature(0.2F)   // colder, mountain-appropriate

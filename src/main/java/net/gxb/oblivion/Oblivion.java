@@ -28,8 +28,9 @@ import net.minecraft.world.level.levelgen.SurfaceRules;
 import terrablender.api.Regions;
 import terrablender.api.SurfaceRuleManager;
 import net.gxb.oblivion.worldgen.tree.ModTrunkPlacerTypes;
-import net.minecraft.world.ItemInteractionResult;
+import terrablender.api.RegionType;
 import net.neoforged.neoforge.event.entity.player.UseItemOnBlockEvent;
+import net.gxb.oblivion.worldgen.ModFeatures;
 
 @Mod(Oblivion.MOD_ID)
 public class Oblivion {
@@ -53,6 +54,7 @@ public class Oblivion {
         ModBlocks.register(modEventBus);
         ModBlockEntities.register(modEventBus);
         ModTrunkPlacerTypes.TRUNK_PLACER_TYPES.register(modEventBus);
+        ModFeatures.FEATURES.register(modEventBus);
 
         modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
     }
@@ -61,7 +63,9 @@ public class Oblivion {
         event.enqueueWork(() -> {
             ModEnergyMappings.init();
             Regions.register(new ModRegion(
-                    ResourceLocation.fromNamespaceAndPath(Oblivion.MOD_ID, "overworld"), 10));
+                    ResourceLocation.fromNamespaceAndPath(Oblivion.MOD_ID, "overworld"),
+                    RegionType.OVERWORLD,
+                    1));
 
             SurfaceRuleManager.addSurfaceRules(
                     SurfaceRuleManager.RuleCategory.OVERWORLD,

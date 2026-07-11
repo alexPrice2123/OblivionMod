@@ -1,50 +1,50 @@
-/time set day
-/gamerule doDaylightCycle false
-/time set day
+/locate biome oblivionmodgxb:spirit_peaks
+/tp @s -296 150 -936
+/locate biome oblivionmodgxb:spirit_peaks
+/tp @s -239 76 784
 /locate biome oblivionmodgxb:ancient_forest
-/gamemode spectator
-/gamemode creative
+/tp @s 274 120 1411
 /locate biome oblivionmodgxb:ancient_forest
-/tp @s -70 66 -11
-/gamemode spectator
+/tp @s -306 112 93
 /locate biome oblivionmodgxb:ancient_forest
-/gamemode creative
-/tp @s -351 93 422
+/tp @s -147 107 440
+/locate biome oblivionmodgxb:spirit_peaks
+/tp @s 1733 305 2474
 /locate biome oblivionmodgxb:ancient_forest
-/tp @s -816 87 845
+/tp @s 1732 122 2446
+/locate biome oblivionmodgxb:ancient_forest
+/tp @s 147 81 240
+/locate biome oblivionmodgxb:spirit_peaks
+/tp @s -769 70 -863
+/locate biome oblivionmodgxb:spirit_peaks
+/tp @s 288 65 -308
+/locate biome oblivionmodgxb:spirit_peaks
+/locate biome oblivionmodgxb:ancient_forest
+/tp @s -233 109 -374
+/locate biome oblivionmodgxb:spirit_peaks
+/locate biome oblivionmodgxb:ancient_forest
+/tp @s -750 92 -250
+/locate biome oblivionmodgxb:spirit_peaks
+/locate biome oblivionmodgxb:ancient_forest
+/tp @s -1638 306 -4106
 /locate biome oblivionmodgxb:ancient_forest
 /locate biome oblivionmodgxb:spirit_peaks
-/tp @s 636 112 -583
+/locate biome oblivionmodgxb:ancient_forest
+/tp @s 5592 94 -5380
+/locate biome oblivionmodgxb:ancient_forest
+/tp @s 729 72 3443
+/locate biome oblivionmodgxb:ancient_forest
+/tp @s 361 75 353
 /locate biome oblivionmodgxb:spirit_peaks
 /locate biome oblivionmodgxb:ancient_forest
-/tp @s 152 75 172
+/tp @s 1965 135 3958
+/locate biome oblivionmodgxb:ancient_forest
+/tp @s -2830 79 -3541
 /locate biome oblivionmodgxb:spirit_peaks
 /locate biome oblivionmodgxb:ancient_forest
-/tp @s 164 126 -221
 /locate biome oblivionmodgxb:spirit_peaks
-/tp @s 253 99 3019
+/locate biome oblivionmodgxb:ancient_forest
+/tp @s -649 139 2904
+/locate biome oblivionmodgxb:ancient_forest
+/tp @s 1610 72 -1568
 /locate biome oblivionmodgxb:spirit_peaks
-/tp @s 536 68 -1008
-/locate biome oblivionmodgxb:spirit_peaks
-/tp @s 1487 63 249
-/locate biome oblivionmodgxb:ancient_forest
-/tp @s -360 107 362
-/locate biome oblivionmodgxb:ancient_forest
-/tp @s 254 98 323
-/locate biome oblivionmodgxb:ancient_forest
-/tp @s -5 79 128
-/locate biome oblivionmodgxb:ancient_forest
-/tp @s -90 96 -195
-/locate biome oblivionmodgxb:ancient_forest
-/tick rate 2000
-/tick rate 20000
-/tick rate 10000
-/time set day
-/tick rate 20
-/gamemode survival
-/gamemode creative
-/gamemode survival
-/gamemode creative
-/weather clear
-/gamemode survival
-/give @s minecraft:diamond_axe
