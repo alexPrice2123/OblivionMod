@@ -3,7 +3,6 @@ package net.gxb.oblivion.worldgen.tree;
 import net.gxb.oblivion.block.ModBlocks;
 import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.util.valueproviders.UniformInt;
-import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
@@ -12,36 +11,35 @@ import net.minecraft.world.level.levelgen.feature.featuresize.TwoLayersFeatureSi
 import net.minecraft.world.level.levelgen.feature.foliageplacers.SpruceFoliagePlacer;
 import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
 import net.minecraft.world.level.levelgen.feature.trunkplacers.DarkOakTrunkPlacer;
-import net.minecraft.world.level.levelgen.feature.Feature;
-import net.minecraft.world.level.levelgen.feature.configurations.NoneFeatureConfiguration;
+import net.minecraft.world.level.levelgen.feature.trunkplacers.StraightTrunkPlacer; // Required import for 1x1 trunks
 
 public class ModTreeConfiguredFeatures {
 
     public static void bootstrap(BootstrapContext<ConfiguredFeature<?, ?>> context) {
 
-        BlockState log = ModBlocks.SPIRIT_LOG.get().defaultBlockState(); // swap for your real log block
-        BlockState leaves = ModBlocks.SPIRIT_LEAVES.get().defaultBlockState(); // swap for your real leaves block
+        BlockState log = ModBlocks.SPIRIT_LOG.get().defaultBlockState();
+        BlockState leaves = ModBlocks.SPIRIT_LEAVES.get().defaultBlockState();
 
-        // SHORT variant — 2-wide trunk, roughly under ~32 block tall
+        // SHORT variant — Solid 2x2 trunk
         context.register(ModTreeFeatures.SPIRIT_TREE_SHORT_CONFIGURED,
                 new ConfiguredFeature<>(
                         Feature.TREE,
                         new TreeConfiguration.TreeConfigurationBuilder(
                                 BlockStateProvider.simple(log),
-                                new DarkOakTrunkPlacer(8, 6, 4), // base 8 + up to 10 random ≈ 8-18 tall
+                                new DarkOakTrunkPlacer(8, 6, 4),
                                 BlockStateProvider.simple(leaves),
                                 new SpruceFoliagePlacer(UniformInt.of(2, 3), UniformInt.of(0, 2), UniformInt.of(14, 20)),
                                 new TwoLayersFeatureSize(1, 1, 2)
                         ).build()
                 ));
 
-        // TALL variant — scaled-up 2-wide trunk reading as noticeably thicker/taller, 32+ block
+        // TALL variant — Scaled-up solid 2x2 trunk
         context.register(ModTreeFeatures.SPIRIT_TREE_TALL_CONFIGURED,
                 new ConfiguredFeature<>(
                         Feature.TREE,
                         new TreeConfiguration.TreeConfigurationBuilder(
                                 BlockStateProvider.simple(log),
-                                new ThreeByThreeTrunkPlacer(24, 10, 6),
+                                new TaperingTrunkPlacer(24, 10, 6, 3),
                                 BlockStateProvider.simple(leaves),
                                 new SpruceFoliagePlacer(UniformInt.of(2, 3), UniformInt.of(0, 2), UniformInt.of(14, 20)),
                                 new TwoLayersFeatureSize(3, 1, 6)

@@ -28,16 +28,16 @@ public class ModRegion extends Region {
                 Climate.Parameter.span(0.3F, 0.8F),      // same land-only range
                 Climate.Parameter.span(-1.0F, -0.9F),
                 Climate.Parameter.point(0.0F),
-                Climate.Parameter.span(0.5F, 1.0F));
+                Climate.Parameter.span(0.4F, 1.0F));
 
 // Spirit Peaks
         biome(mapper, ModBiomes.SPIRIT_PEAKS,
                 Climate.Parameter.span(0.35F, 0.4F),
-                Climate.Parameter.span(0.7F, 1.0F),
-                Climate.Parameter.span(0.15F, 0.4F),      // same land-only range
+                Climate.Parameter.span(0.6F, 0.7F),
+                Climate.Parameter.span(0.6F, 0.9F),      // same land-only range
                 Climate.Parameter.span(-1.0F, -0.9F),
                 Climate.Parameter.point(0.0F),
-                Climate.Parameter.span(0.7F, 1.0F));
+                Climate.Parameter.span(0.5F, 1.0F));
     }
 
     private void biome(Consumer<Pair<Climate.ParameterPoint, ResourceKey<Biome>>> mapper,

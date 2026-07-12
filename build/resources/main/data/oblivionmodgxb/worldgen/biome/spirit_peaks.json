@@ -26,7 +26,9 @@
       "minecraft:fossil_upper",
       "minecraft:fossil_lower"
     ],
-    [],
+    [
+      "oblivionmodgxb:spirit_spike"
+    ],
     [],
     [
       "minecraft:ore_coal_upper",

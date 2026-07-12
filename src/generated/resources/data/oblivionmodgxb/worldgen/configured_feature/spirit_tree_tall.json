@@ -46,10 +46,11 @@
       "upper_size": 6
     },
     "trunk_placer": {
-      "type": "oblivionmodgxb:three_by_three",
+      "type": "oblivionmodgxb:tapering_trunk",
       "base_height": 24,
       "height_rand_a": 10,
-      "height_rand_b": 6
+      "height_rand_b": 6,
+      "start_size": 3
     },
     "trunk_provider": {
       "type": "minecraft:simple_state_provider",

@@ -11,7 +11,7 @@ public class ModTrunkPlacerTypes {
     public static final DeferredRegister<TrunkPlacerType<?>> TRUNK_PLACER_TYPES =
             DeferredRegister.create(BuiltInRegistries.TRUNK_PLACER_TYPE.key(), Oblivion.MOD_ID);
 
-    public static final DeferredHolder<TrunkPlacerType<?>, TrunkPlacerType<ThreeByThreeTrunkPlacer>> THREE_BY_THREE =
-            TRUNK_PLACER_TYPES.register("three_by_three",
-                    () -> new TrunkPlacerType<>(ThreeByThreeTrunkPlacer.CODEC));
+    public static final DeferredHolder<TrunkPlacerType<?>, TrunkPlacerType<TaperingTrunkPlacer>> TAPERING_TRUNK =
+            TRUNK_PLACER_TYPES.register("tapering_trunk",
+                    () -> new TrunkPlacerType<>(TaperingTrunkPlacer.CODEC));
 }

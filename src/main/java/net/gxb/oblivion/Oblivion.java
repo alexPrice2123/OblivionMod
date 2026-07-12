@@ -31,6 +31,7 @@ import net.gxb.oblivion.worldgen.tree.ModTrunkPlacerTypes;
 import terrablender.api.RegionType;
 import net.neoforged.neoforge.event.entity.player.UseItemOnBlockEvent;
 import net.gxb.oblivion.worldgen.ModFeatures;
+import net.minecraft.world.level.levelgen.VerticalAnchor;
 
 @Mod(Oblivion.MOD_ID)
 public class Oblivion {
@@ -72,10 +73,41 @@ public class Oblivion {
                     Oblivion.MOD_ID,
                     SurfaceRules.ifTrue(
                             SurfaceRules.isBiome(ModBiomes.SPIRIT_PEAKS),
-                            SurfaceRules.state(Blocks.TUFF.defaultBlockState())
+                            spiritPeaksSurfaceRules()
                     )
             );
         });
+    }
+
+    private static SurfaceRules.RuleSource spiritPeaksSurfaceRules() {
+        return SurfaceRules.sequence(
+                // Snow 150-158
+                SurfaceRules.ifTrue(
+                        SurfaceRules.not(SurfaceRules.verticalGradient("spirit_peaks_glacier_start",
+                                VerticalAnchor.absolute(150), VerticalAnchor.absolute(158))),
+                        SurfaceRules.state(Blocks.SNOW_BLOCK.defaultBlockState())),
+
+                // Deepslate 135-150
+                SurfaceRules.ifTrue(
+                        SurfaceRules.not(SurfaceRules.verticalGradient("spirit_peaks_deepslate",
+                                VerticalAnchor.absolute(135), VerticalAnchor.absolute(150))),
+                        SurfaceRules.state(Blocks.DEEPSLATE.defaultBlockState())),
+
+                // Tuff 105-135
+                SurfaceRules.ifTrue(
+                        SurfaceRules.not(SurfaceRules.verticalGradient("spirit_peaks_tuff",
+                                VerticalAnchor.absolute(105), VerticalAnchor.absolute(135))),
+                        SurfaceRules.state(Blocks.TUFF.defaultBlockState())),
+
+                // Stone 75-105
+                SurfaceRules.ifTrue(
+                        SurfaceRules.not(SurfaceRules.verticalGradient("spirit_peaks_stone",
+                                VerticalAnchor.absolute(75), VerticalAnchor.absolute(105))),
+                        SurfaceRules.state(Blocks.STONE.defaultBlockState())),
+
+                // Base — grassy slopes (lowest, default fallback)
+                SurfaceRules.state(Blocks.GRASS_BLOCK.defaultBlockState())
+        );
     }
 
     private void onBlockInteraction(final UseItemOnBlockEvent event) {

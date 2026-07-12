@@ -1,39 +1,3 @@
-/tp @s 1733 305 2474
-/locate biome oblivionmodgxb:ancient_forest
-/tp @s 1732 122 2446
-/locate biome oblivionmodgxb:ancient_forest
-/tp @s 147 81 240
-/locate biome oblivionmodgxb:spirit_peaks
-/tp @s -769 70 -863
-/locate biome oblivionmodgxb:spirit_peaks
-/tp @s 288 65 -308
-/locate biome oblivionmodgxb:spirit_peaks
-/locate biome oblivionmodgxb:ancient_forest
-/tp @s -233 109 -374
-/locate biome oblivionmodgxb:spirit_peaks
-/locate biome oblivionmodgxb:ancient_forest
-/tp @s -750 92 -250
-/locate biome oblivionmodgxb:spirit_peaks
-/locate biome oblivionmodgxb:ancient_forest
-/tp @s -1638 306 -4106
-/locate biome oblivionmodgxb:ancient_forest
-/locate biome oblivionmodgxb:spirit_peaks
-/locate biome oblivionmodgxb:ancient_forest
-/tp @s 5592 94 -5380
-/locate biome oblivionmodgxb:ancient_forest
-/tp @s 729 72 3443
-/locate biome oblivionmodgxb:ancient_forest
-/tp @s 361 75 353
-/locate biome oblivionmodgxb:spirit_peaks
-/locate biome oblivionmodgxb:ancient_forest
-/tp @s 1965 135 3958
-/locate biome oblivionmodgxb:ancient_forest
-/tp @s -2830 79 -3541
-/locate biome oblivionmodgxb:spirit_peaks
-/locate biome oblivionmodgxb:ancient_forest
-/locate biome oblivionmodgxb:spirit_peaks
-/locate biome oblivionmodgxb:ancient_forest
-/tp @s -649 139 2904
 /locate biome oblivionmodgxb:ancient_forest
 /tp @s 1610 72 -1568
 /locate biome oblivionmodgxb:spirit_peaks
@@ -48,3 +12,39 @@
 /tp @s -135 68 37
 /locate biome oblivionmodgxb:spirit_peaks
 /tp @s -303 75 -262
+/locate biome oblivionmodgxb:spirit_peaks
+/locate biome oblivionmodgxb:ancient_forest
+/tp @s -343 80 374
+/locate biome oblivionmodgxb:ancient_forest
+/tp @s 72 66 -207
+/locate biome oblivionmodgxb:ancient_forest
+/tp @s -466 91 -726
+/locate biome oblivionmodgxb:spirit_peaks
+/locate biome oblivionmodgxb:ancient_forest
+//
+/tp @s 630 91 695
+/locate biome oblivionmodgxb:ancient_forest
+/tp @s 339 74 -241
+/locate biome oblivionmodgxb:ancient_forest
+/tp @s -280 89 19
+/locate biome oblivionmodgxb:ancient_forest
+/tp @s 98 65 -188
+/locate biome oblivionmodgxb:ancient_forest
+/tp @s 671 116 -374
+/locate biome oblivionmodgxb:ancient_forest
+/tp @s -608 91 23
+/locate biome oblivionmodgxb:ancient_forest
+/tp @s 672 66 381
+/locate biome oblivionmodgxb:ancient_forest
+/tp @s 1241 71 -1219
+/locate biome oblivionmodgxb:spirit_peaks
+/locate biome oblivionmodgxb:ancient_forest
+/tp @s -594 112 -484
+/locate biome oblivionmodgxb:spirit_peaks
+/locate biome oblivionmodgxb:ancient_forest
+/tp @s -480 80 209
+/locate biome oblivionmodgxb:spirit_peaks
+/tp @s -508 67 3615
+/locate biome oblivionmodgxb:spirit_peaks
+//
+/tp @s -4992 64 3050

@@ -40,8 +40,6 @@ public class ModBiomesGenerator {
         BiomeDefaultFeatures.addDefaultUndergroundVariety(genBuilder);
         BiomeDefaultFeatures.addDefaultOres(genBuilder);
         BiomeDefaultFeatures.addDefaultSoftDisks(genBuilder);
-
-        // trees — reusing vanilla's oak+birch forest placement instead of plain grass
         genBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModTreeFeatures.SPIRIT_TREE_SHORT_PLACED);
         genBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModTreeFeatures.SPIRIT_TREE_TALL_PLACED);
         BiomeDefaultFeatures.addJungleGrass(genBuilder);

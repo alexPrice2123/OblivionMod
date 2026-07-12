@@ -10,11 +10,9 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.FeaturePlaceContext;
 import net.minecraft.world.level.levelgen.feature.configurations.NoneFeatureConfiguration;
-import net.gxb.oblivion.block.ModBlocks;
 
 public class ModSpikeFeature extends Feature<NoneFeatureConfiguration> {
 
-    // swap this for your real spike block once registered, e.g. ModBlocks.SPIRIT_STONE.get()
     private static final BlockState SPIKE_BLOCK = Blocks.TUFF.defaultBlockState();
 
     public ModSpikeFeature(Codec<NoneFeatureConfiguration> codec) {
@@ -31,10 +29,14 @@ public class ModSpikeFeature extends Feature<NoneFeatureConfiguration> {
             pos = pos.below();
         }
 
-        // relaxed from vanilla's SNOW_BLOCK-only check — accept any solid, non-air ground
         if (level.getBlockState(pos).isAir()) {
             return false;
         }
+
+        // Check ground type BEFORE shifting pos upward, so this reflects the actual spike base
+        boolean snowyGround = level.getBlockState(pos).is(Blocks.SNOW_BLOCK)
+                || level.getBlockState(pos).is(Blocks.POWDER_SNOW)
+                || level.getBlockState(pos).is(Blocks.SNOW);
 
         pos = pos.above(random.nextInt(4));
         int height = random.nextInt(4) + 7;
@@ -68,6 +70,14 @@ public class ModSpikeFeature extends Feature<NoneFeatureConfiguration> {
                         }
                     }
                 }
+            }
+        }
+
+        // Cap the tip with a snow layer if this spike is rooted in snowy terrain
+        if (snowyGround) {
+            BlockPos tip = pos.above(height - 1);
+            if (level.getBlockState(tip.above()).isAir()) {
+                this.setBlock(level, tip.above(), Blocks.SNOW.defaultBlockState());
             }
         }
 

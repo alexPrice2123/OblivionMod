@@ -20,10 +20,14 @@ public class OblivionDataGenerators {
 
     public static final RegistrySetBuilder WORLDGEN_BUILDER = new RegistrySetBuilder()
             .add(Registries.BIOME, ModBiomesGenerator::bootstrap)
-            .add(Registries.CONFIGURED_FEATURE, ModTreeConfiguredFeatures::bootstrap)
-            .add(Registries.PLACED_FEATURE, ModTreePlacedFeatures::bootstrap)
-            .add(Registries.CONFIGURED_FEATURE, ModSpikeConfiguredFeatures::bootstrapConfigured)
-            .add(Registries.PLACED_FEATURE, ModSpikeConfiguredFeatures::bootstrapPlaced);
+            .add(Registries.CONFIGURED_FEATURE, context -> {
+                ModTreeConfiguredFeatures.bootstrap(context);
+                ModSpikeConfiguredFeatures.bootstrapConfigured(context);
+            })
+            .add(Registries.PLACED_FEATURE, context -> {
+                ModTreePlacedFeatures.bootstrap(context);
+                ModSpikeConfiguredFeatures.bootstrapPlaced(context);
+            });
 
     @SubscribeEvent
     public static void gatherData(GatherDataEvent event) {
