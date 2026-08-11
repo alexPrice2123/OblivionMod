@@ -1,0 +1,75 @@
+{
+  "minecraft:recipes/transportation/mangrove_boat": {
+    "criteria": {
+      "in_water": "2026-08-05 17:08:18 -0600"
+    },
+    "done": true
+  },
+  "minecraft:recipes/decorations/crafting_table": {
+    "criteria": {
+      "unlock_right_away": "2026-08-05 17:08:01 -0600"
+    },
+    "done": true
+  },
+  "minecraft:recipes/transportation/acacia_boat": {
+    "criteria": {
+      "in_water": "2026-08-05 17:08:18 -0600"
+    },
+    "done": true
+  },
+  "minecraft:recipes/transportation/cherry_boat": {
+    "criteria": {
+      "in_water": "2026-08-05 17:08:18 -0600"
+    },
+    "done": true
+  },
+  "minecraft:adventure/adventuring_time": {
+    "criteria": {
+      "minecraft:mangrove_swamp": "2026-08-05 17:08:52 -0600",
+      "minecraft:sparse_jungle": "2026-08-05 17:09:17 -0600",
+      "minecraft:ocean": "2026-08-05 17:08:45 -0600",
+      "minecraft:jungle": "2026-08-05 17:12:15 -0600",
+      "minecraft:deep_ocean": "2026-08-05 17:08:25 -0600",
+      "minecraft:river": "2026-08-05 17:12:14 -0600",
+      "minecraft:plains": "2026-08-05 17:08:02 -0600"
+    },
+    "done": false
+  },
+  "minecraft:recipes/transportation/bamboo_raft": {
+    "criteria": {
+      "in_water": "2026-08-05 17:08:18 -0600"
+    },
+    "done": true
+  },
+  "minecraft:recipes/transportation/spruce_boat": {
+    "criteria": {
+      "in_water": "2026-08-05 17:08:18 -0600"
+    },
+    "done": true
+  },
+  "minecraft:recipes/transportation/birch_boat": {
+    "criteria": {
+      "in_water": "2026-08-05 17:08:18 -0600"
+    },
+    "done": true
+  },
+  "minecraft:recipes/transportation/oak_boat": {
+    "criteria": {
+      "in_water": "2026-08-05 17:08:18 -0600"
+    },
+    "done": true
+  },
+  "minecraft:recipes/transportation/jungle_boat": {
+    "criteria": {
+      "in_water": "2026-08-05 17:08:18 -0600"
+    },
+    "done": true
+  },
+  "minecraft:recipes/transportation/dark_oak_boat": {
+    "criteria": {
+      "in_water": "2026-08-05 17:08:18 -0600"
+    },
+    "done": true
+  },
+  "DataVersion": 3955
+}

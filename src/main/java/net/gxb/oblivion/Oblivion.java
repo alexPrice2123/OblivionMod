@@ -25,6 +25,7 @@ import net.neoforged.neoforge.client.event.EntityRenderersEvent;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.levelgen.SurfaceRules;
+import net.minecraft.world.level.levelgen.placement.CaveSurface;
 import terrablender.api.Regions;
 import terrablender.api.SurfaceRuleManager;
 import net.gxb.oblivion.worldgen.tree.ModTrunkPlacerTypes;
@@ -80,7 +81,7 @@ public class Oblivion {
     }
 
     private static SurfaceRules.RuleSource spiritPeaksSurfaceRules() {
-        return SurfaceRules.sequence(
+        SurfaceRules.RuleSource bands = SurfaceRules.sequence(
                 // Snow 150-158
                 SurfaceRules.ifTrue(
                         SurfaceRules.not(SurfaceRules.verticalGradient("spirit_peaks_glacier_start",
@@ -105,8 +106,20 @@ public class Oblivion {
                                 VerticalAnchor.absolute(75), VerticalAnchor.absolute(105))),
                         SurfaceRules.state(Blocks.STONE.defaultBlockState())),
 
-                // Base — grassy slopes (lowest, default fallback)
+                // Grassy slopes, but ONLY near the true surface — see stoneDepthCheck below
                 SurfaceRules.state(Blocks.GRASS_BLOCK.defaultBlockState())
+        );
+
+        // Confine all of the above to the actual surface skin (the top handful of
+        // blocks under open air/sky). Without this, every exposed block anywhere
+        // in the biome — including deep cave walls and floors far underground —
+        // was matching "below all bands" and getting force-painted solid grass,
+        // which is why caves and normal stone/deepslate terrain weren't showing
+        // up below a certain Y. Anywhere this condition is false now falls
+        // through to vanilla's normal terrain rules instead of being overridden.
+        return SurfaceRules.ifTrue(
+                SurfaceRules.stoneDepthCheck(0, true, CaveSurface.FLOOR),
+                bands
         );
     }
 

@@ -14,7 +14,6 @@ import net.gxb.oblivion.block.custom.EnergyTableBlock;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.RotatedPillarBlock;
 import net.minecraft.world.level.block.LeavesBlock;
-
 import java.util.function.Supplier;
 
 public class ModBlocks {
@@ -25,7 +24,6 @@ public class ModBlocks {
             () -> new EssenceTableBlock(BlockBehaviour.Properties.of()
                     .strength(3.5f)
                     .noOcclusion()));
-
     public static final DeferredBlock<Block> ENERGY_TABLE = registerBlock("energy_table",
             () -> new EnergyTableBlock(BlockBehaviour.Properties.of()
                     .strength(3.5f)
@@ -39,6 +37,25 @@ public class ModBlocks {
     public static final DeferredBlock<Block> SPIRIT_PLANKS = registerBlock("spirit_planks",
             () -> new RotatedPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.DARK_OAK_PLANKS)));
 
+    // --- Newly added stone-family blocks ---
+    public static final DeferredBlock<Block> SPIRIT_STONE = registerBlock("spirit_stone",
+            () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE)));
+    public static final DeferredBlock<Block> CURSED_STONE = registerBlock("cursed_stone",
+            () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE)));
+    public static final DeferredBlock<Block> COBBLED_SPIRIT_STONE = registerBlock("cobbled_spirit_stone",
+            () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.COBBLESTONE)));
+    public static final DeferredBlock<Block> POLISHED_SPIRIT_STONE = registerBlock("polished_spirit_stone",
+            () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.POLISHED_ANDESITE)));
+    public static final DeferredBlock<Block> POLISHED_CURSED_STONE = registerBlock("polished_cursed_stone",
+            () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.POLISHED_ANDESITE)));
+    public static final DeferredBlock<Block> POLISHED_SPIRIT_BRICKS = registerBlock("polished_spirit_bricks",
+            () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_BRICKS)));
+    public static final DeferredBlock<Block> POLISHED_CURSED_BRICKS = registerBlock("polished_cursed_bricks",
+            () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_BRICKS)));
+    public static final DeferredBlock<Block> CRACKED_POLISHED_SPIRIT_BRICKS = registerBlock("cracked_polished_spirit_bricks",
+            () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.CRACKED_STONE_BRICKS)));
+    public static final DeferredBlock<Block> CRACKED_POLISHED_CURSED_BRICKS = registerBlock("cracked_polished_cursed_bricks",
+            () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.CRACKED_STONE_BRICKS)));
 
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block) {
         DeferredBlock<T> toReturn = BLOCKS.register(name, block);

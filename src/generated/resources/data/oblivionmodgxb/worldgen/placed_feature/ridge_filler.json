@@ -1,0 +1,42 @@
+{
+  "feature": "oblivionmodgxb:ridge_filler",
+  "placement": [
+    {
+      "type": "minecraft:count",
+      "count": {
+        "type": "minecraft:uniform",
+        "max_inclusive": 8,
+        "min_inclusive": 4
+      }
+    },
+    {
+      "type": "minecraft:in_square"
+    },
+    {
+      "type": "minecraft:heightmap",
+      "heightmap": "MOTION_BLOCKING"
+    },
+    {
+      "type": "minecraft:block_predicate_filter",
+      "predicate": {
+        "type": "minecraft:matching_blocks",
+        "blocks": [
+          "minecraft:snow_block",
+          "minecraft:snow",
+          "minecraft:powder_snow",
+          "minecraft:stone",
+          "minecraft:tuff",
+          "minecraft:deepslate"
+        ],
+        "offset": [
+          0,
+          -1,
+          0
+        ]
+      }
+    },
+    {
+      "type": "minecraft:biome"
+    }
+  ]
+}

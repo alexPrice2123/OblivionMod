@@ -13,4 +13,7 @@ public class ModFeatures {
 
     public static final DeferredHolder<Feature<?>, ModSpikeFeature> SPIRIT_SPIKE =
             FEATURES.register("spirit_spike", () -> new ModSpikeFeature(NoneFeatureConfiguration.CODEC));
+
+    public static final DeferredHolder<Feature<?>, ModRidgeFillerFeature> RIDGE_FILLER =
+            FEATURES.register("ridge_filler", () -> new ModRidgeFillerFeature(NoneFeatureConfiguration.CODEC));
 }

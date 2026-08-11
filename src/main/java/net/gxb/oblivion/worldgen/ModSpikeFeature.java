@@ -13,10 +13,21 @@ import net.minecraft.world.level.levelgen.feature.configurations.NoneFeatureConf
 
 public class ModSpikeFeature extends Feature<NoneFeatureConfiguration> {
 
-    private static final BlockState SPIKE_BLOCK = Blocks.TUFF.defaultBlockState();
-
     public ModSpikeFeature(Codec<NoneFeatureConfiguration> codec) {
         super(codec);
+    }
+
+    // Weighted small/medium/large split so a chunk's spikes actually vary in scale
+    // instead of all landing in one narrow height band.
+    private static int rollHeight(RandomSource random) {
+        float roll = random.nextFloat();
+        if (roll < 0.5F) {
+            return random.nextInt(5) + 5;    // small: 5-9
+        } else if (roll < 0.9F) {
+            return random.nextInt(8) + 10;   // medium: 10-17
+        } else {
+            return random.nextInt(8) + 18;   // large: 18-25
+        }
     }
 
     @Override
@@ -33,79 +44,100 @@ public class ModSpikeFeature extends Feature<NoneFeatureConfiguration> {
             return false;
         }
 
-        // Check ground type BEFORE shifting pos upward, so this reflects the actual spike base
         boolean snowyGround = level.getBlockState(pos).is(Blocks.SNOW_BLOCK)
                 || level.getBlockState(pos).is(Blocks.POWDER_SNOW)
                 || level.getBlockState(pos).is(Blocks.SNOW);
 
         pos = pos.above(random.nextInt(4));
-        int height = random.nextInt(4) + 7;
-        int radius = height / 4 + random.nextInt(2);
-        if (radius > 1 && random.nextInt(60) == 0) {
-            pos = pos.above(10 + random.nextInt(30));
-        }
+        int height = rollHeight(random);
+        // Thinner relative to height than before — a stubby wide radius is
+        // exactly what reads as a round mound instead of a rock spire.
+        int baseRadius = Math.max(1, height / 4 + random.nextInt(2));
+
+        float taperSharpness = 2.0F + random.nextFloat() * 1.6F;
+        float bodyFraction = 0.12F + random.nextFloat() * 0.15F;
+        float erosionFreq = 0.3F + random.nextFloat() * 0.4F;
+        float erosionPhase = random.nextFloat() * (float) Math.PI * 2.0F;
+
+        // Angular jaggedness — breaks the circular cross-section into a faceted,
+        // ridged rock silhouette instead of a smooth round mound.
+        float angFreq1 = 3.0F + random.nextFloat() * 3.0F;
+        float angPhase1 = random.nextFloat() * (float) Math.PI * 2.0F;
+        float angAmp1 = 0.18F + random.nextFloat() * 0.12F;
+        float angFreq2 = 7.0F + random.nextFloat() * 5.0F;
+        float angPhase2 = random.nextFloat() * (float) Math.PI * 2.0F;
+        float angAmp2 = 0.1F + random.nextFloat() * 0.1F;
 
         for (int k = 0; k < height; ++k) {
-            float f = (1.0F - (float) k / (float) height) * (float) radius;
-            int l = Mth.ceil(f);
+            float t = (float) k / (float) height;
+
+            float shapeFactor;
+            if (t < bodyFraction) {
+                shapeFactor = 1.0F;
+            } else {
+                float taperT = (t - bodyFraction) / (1.0F - bodyFraction);
+                shapeFactor = (float) Math.pow(1.0 - taperT, taperSharpness);
+            }
+
+            float erosion = 1.0F + 0.07F * (float) Math.sin(k * erosionFreq + erosionPhase);
+
+            float f = shapeFactor * erosion * (float) baseRadius;
+            int l = Mth.ceil(f * 1.6F); // loop bound needs headroom for the angular bulges
 
             for (int i1 = -l; i1 <= l; ++i1) {
                 float f1 = (float) Mth.abs(i1) - 0.25F;
 
                 for (int j1 = -l; j1 <= l; ++j1) {
                     float f2 = (float) Mth.abs(j1) - 0.25F;
-                    if ((i1 == 0 && j1 == 0 || !(f1 * f1 + f2 * f2 > f * f))
-                            && (i1 != -l && i1 != l && j1 != -l && j1 != l || !(random.nextFloat() > 0.75F))) {
+                    float roughness = ModSpikeUtils.angularRoughness(i1, j1, angFreq1, angPhase1, angAmp1, angFreq2, angPhase2, angAmp2);
+                    float fJagged = f * roughness;
+                    if ((i1 == 0 && j1 == 0 || !(f1 * f1 + f2 * f2 > fJagged * fJagged))
+                            && (i1 != -l && i1 != l && j1 != -l && j1 != l || !(random.nextFloat() > 0.72F))) {
 
-                        BlockState state = level.getBlockState(pos.offset(i1, k, j1));
-                        if (state.isAir() || isDirt(state) || state.is(Blocks.SNOW_BLOCK) || state.is(Blocks.STONE)) {
-                            this.setBlock(level, pos.offset(i1, k, j1), SPIKE_BLOCK);
-                        }
-
-                        if (k != 0 && l > 1) {
-                            state = level.getBlockState(pos.offset(i1, -k, j1));
-                            if (state.isAir() || isDirt(state) || state.is(Blocks.SNOW_BLOCK) || state.is(Blocks.STONE)) {
-                                this.setBlock(level, pos.offset(i1, -k, j1), SPIKE_BLOCK);
-                            }
+                        BlockPos upPos = pos.offset(i1, k, j1);
+                        BlockState state = level.getBlockState(upPos);
+                        if (ModSpikeUtils.isReplaceableGround(state)) {
+                            this.setBlock(level, upPos, ModSpikeUtils.spikeBlockForY(random, upPos.getY()));
                         }
                     }
                 }
             }
         }
 
-        // Cap the tip with a snow layer if this spike is rooted in snowy terrain
-        if (snowyGround) {
-            BlockPos tip = pos.above(height - 1);
+        BlockPos tip = pos.above(height - 1);
+        boolean aboveSnowLine = tip.getY() >= 150;
+        if (snowyGround || aboveSnowLine) {
             if (level.getBlockState(tip.above()).isAir()) {
                 this.setBlock(level, tip.above(), Blocks.SNOW.defaultBlockState());
             }
         }
 
-        int base = radius - 1;
-        if (base < 0) base = 0;
-        else if (base > 1) base = 1;
+        // Radial talus: flares out well beyond the spike's own base radius and
+        // gradually thins toward the edge, so the spike reads as growing out of
+        // the mountain instead of sitting on top of it with a hard vertical seam.
+        int footRadius = baseRadius + 3 + random.nextInt(3);
 
-        for (int l1 = -base; l1 <= base; ++l1) {
-            for (int i2 = -base; i2 <= base; ++i2) {
+        for (int l1 = -footRadius; l1 <= footRadius; ++l1) {
+            for (int i2 = -footRadius; i2 <= footRadius; ++i2) {
+                double dist = Math.sqrt((double) (l1 * l1 + i2 * i2));
+                if (dist > footRadius) continue;
+
+                float distFrac = (float) (dist / footRadius);
+                float skipChance = 0.1F + distFrac * 0.6F;
+                if (random.nextFloat() < skipChance) continue;
+
+                int fillDepth = Math.max(1, Mth.floor((1.0F - distFrac) * 7.0F) + random.nextInt(2));
+
                 BlockPos below = pos.offset(l1, -1, i2);
-                int drop = 50;
-                if (Math.abs(l1) == 1 && Math.abs(i2) == 1) {
-                    drop = random.nextInt(5);
-                }
-
-                while (below.getY() > 50) {
+                int filled = 0;
+                while (below.getY() > 50 && filled < fillDepth) {
                     BlockState state = level.getBlockState(below);
-                    if (!state.isAir() && !isDirt(state) && !state.is(Blocks.SNOW_BLOCK)
-                            && !state.is(Blocks.STONE) && state != SPIKE_BLOCK) {
+                    if (!ModSpikeUtils.isReplaceableGround(state)) {
                         break;
                     }
-                    this.setBlock(level, below, SPIKE_BLOCK);
+                    this.setBlock(level, below, ModSpikeUtils.spikeBlockForY(random, below.getY()));
                     below = below.below();
-                    --drop;
-                    if (drop <= 0) {
-                        below = below.below(random.nextInt(5) + 1);
-                        drop = random.nextInt(5);
-                    }
+                    ++filled;
                 }
             }
         }

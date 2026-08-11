@@ -1,0 +1,6 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "oblivionmodgxb:block/polished_cursed_stone"
+  }
+}

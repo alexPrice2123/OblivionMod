@@ -1,0 +1,20 @@
+{
+  "minecraft:recipes/decorations/crafting_table": {
+    "criteria": {
+      "unlock_right_away": "2026-08-10 21:44:40 -0600"
+    },
+    "done": true
+  },
+  "minecraft:adventure/adventuring_time": {
+    "criteria": {
+      "minecraft:old_growth_birch_forest": "2026-08-10 21:50:02 -0600",
+      "minecraft:taiga": "2026-08-10 21:47:23 -0600",
+      "minecraft:river": "2026-08-10 21:49:27 -0600",
+      "minecraft:meadow": "2026-08-10 21:46:19 -0600",
+      "minecraft:windswept_gravelly_hills": "2026-08-10 21:49:12 -0600",
+      "minecraft:plains": "2026-08-10 21:44:41 -0600"
+    },
+    "done": false
+  },
+  "DataVersion": 3955
+}

@@ -10,7 +10,6 @@
   "item.oblivionmodgxb.pure_energy": "Pure Energy",
   "item.oblivionmodgxb.corrupt_essence": "Corrupt Essence",
   "item.oblivionmodgxb.corrupt_energy": "Corrupt Energy",
-
   "item.oblivionmodgxb.astral_essence": "Astral Essence",
   "item.oblivionmodgxb.astral_energy": "Astral Energy",
   "item.oblivionmodgxb.divine_essence": "Divine Essence",
@@ -24,11 +23,19 @@
   "item.oblivionmodgxb.abyssal_essence": "Abyssal Essence",
   "item.oblivionmodgxb.abyssal_energy": "Abyssal Energy",
   "creativetab.oblivionmodgxb.oblivion_tab": "Oblivion",
-
   "block.oblivionmodgxb.essence_table": "Essence Table",
   "block.oblivionmodgxb.energy_table": "Energy Table",
   "block.oblivionmodgxb.spirit_log": "Spirit Log",
   "block.oblivionmodgxb.spirit_leaves": "Spirit Leaves",
   "block.oblivionmodgxb.spirit_planks": "Spirit Planks",
-  "block.oblivionmodgxb.stripped_spirit_log": "Stripped Spirit Log"
+  "block.oblivionmodgxb.stripped_spirit_log": "Stripped Spirit Log",
+  "block.oblivionmodgxb.spirit_stone": "Spirit Stone",
+  "block.oblivionmodgxb.cursed_stone": "Cursed Stone",
+  "block.oblivionmodgxb.cobbled_spirit_stone": "Cobbled Spirit Stone",
+  "block.oblivionmodgxb.polished_spirit_stone": "Polished Spirit Stone",
+  "block.oblivionmodgxb.polished_cursed_stone": "Polished Cursed Stone",
+  "block.oblivionmodgxb.polished_spirit_bricks": "Polished Spirit Bricks",
+  "block.oblivionmodgxb.polished_cursed_bricks": "Polished Cursed Bricks",
+  "block.oblivionmodgxb.cracked_polished_spirit_bricks": "Cracked Polished Spirit Bricks",
+  "block.oblivionmodgxb.cracked_polished_cursed_bricks": "Cracked Polished Cursed Bricks"
 }

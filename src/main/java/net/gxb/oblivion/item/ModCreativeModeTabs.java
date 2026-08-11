@@ -24,7 +24,6 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.ESSENCE.get());
                         output.accept(ModItems.ESSENCE_CORE.get());
 
-                        // Add every Energy / Essence item pair here as you create them, e.g.:
                         output.accept(ModItems.VOID_ENERGY.get());
                         output.accept(ModItems.VOID_ESSENCE.get());
                         output.accept(ModItems.LIGHTNING_ENERGY.get());
@@ -53,6 +52,17 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.SPIRIT_LEAVES.get().asItem());
                         output.accept(ModBlocks.STRIPPED_SPIRIT_LOG.get().asItem());
                         output.accept(ModBlocks.SPIRIT_PLANKS.get().asItem());
+
+                        // New stone-family blocks
+                        output.accept(ModBlocks.SPIRIT_STONE.get().asItem());
+                        output.accept(ModBlocks.CURSED_STONE.get().asItem());
+                        output.accept(ModBlocks.COBBLED_SPIRIT_STONE.get().asItem());
+                        output.accept(ModBlocks.POLISHED_SPIRIT_STONE.get().asItem());
+                        output.accept(ModBlocks.POLISHED_CURSED_STONE.get().asItem());
+                        output.accept(ModBlocks.POLISHED_SPIRIT_BRICKS.get().asItem());
+                        output.accept(ModBlocks.POLISHED_CURSED_BRICKS.get().asItem());
+                        output.accept(ModBlocks.CRACKED_POLISHED_SPIRIT_BRICKS.get().asItem());
+                        output.accept(ModBlocks.CRACKED_POLISHED_CURSED_BRICKS.get().asItem());
                     }).build());
 
     public static void register(IEventBus eventBus) {

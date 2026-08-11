@@ -1,50 +1,50 @@
-/locate biome oblivionmodgxb:ancient_forest
-/tp @s 1610 72 -1568
+/tp @s 209931 128 200178
 /locate biome oblivionmodgxb:spirit_peaks
-/locate biome oblivionmodgxb:ancient_forest
-/tp @s -3378 162 -4023
-/locate biome oblivionmodgxb:ancient_forest
+/tp @s -5074 68 -5183
 /locate biome oblivionmodgxb:spirit_peaks
-/locate biome oblivionmodgxb:ancient_forest
-/tp @s 1368 92 1406
+/tp @s 1064 89 -1431
+/tp @s 209931 128 200178
 /locate biome oblivionmodgxb:spirit_peaks
-/locate biome oblivionmodgxb:ancient_forest
-/tp @s -135 68 37
+/tp @s 209486 128 203823
 /locate biome oblivionmodgxb:spirit_peaks
-/tp @s -303 75 -262
+/tp @s -1399 64 36
 /locate biome oblivionmodgxb:spirit_peaks
-/locate biome oblivionmodgxb:ancient_forest
-/tp @s -343 80 374
-/locate biome oblivionmodgxb:ancient_forest
-/tp @s 72 66 -207
-/locate biome oblivionmodgxb:ancient_forest
-/tp @s -466 91 -726
+/tp @s 884 72 2645
+/tp @s 209486 128 203823
 /locate biome oblivionmodgxb:spirit_peaks
-/locate biome oblivionmodgxb:ancient_forest
-//
-/tp @s 630 91 695
-/locate biome oblivionmodgxb:ancient_forest
-/tp @s 339 74 -241
-/locate biome oblivionmodgxb:ancient_forest
-/tp @s -280 89 19
-/locate biome oblivionmodgxb:ancient_forest
-/tp @s 98 65 -188
-/locate biome oblivionmodgxb:ancient_forest
-/tp @s 671 116 -374
-/locate biome oblivionmodgxb:ancient_forest
-/tp @s -608 91 23
-/locate biome oblivionmodgxb:ancient_forest
-/tp @s 672 66 381
-/locate biome oblivionmodgxb:ancient_forest
-/tp @s 1241 71 -1219
+/tp @s 208270 128 207311
 /locate biome oblivionmodgxb:spirit_peaks
-/locate biome oblivionmodgxb:ancient_forest
-/tp @s -594 112 -484
+/tp @s 737 89 1474
+/tp @s 208270 128 207311
 /locate biome oblivionmodgxb:spirit_peaks
-/locate biome oblivionmodgxb:ancient_forest
-/tp @s -480 80 209
+/tp @s 208942 128 206127
 /locate biome oblivionmodgxb:spirit_peaks
-/tp @s -508 67 3615
+/tp @s 2926 79 3974
+/tp @s 208942 128 206127
 /locate biome oblivionmodgxb:spirit_peaks
-//
-/tp @s -4992 64 3050
+/tp @s 209134 128 205775
+/tp @s 209134 128 -205775
+/locate biome oblivionmodgxb:spirit_peaks
+/tp @s 212411 128 -202311
+/locate biome oblivionmodgxb:spirit_peaks
+/tp @s 2761 130 -3213
+/locate biome oblivionmodgxb:spirit_peaks
+/tp @s 135 120 -3773
+/tp @s 208942 128 206127
+/locate biome oblivionmodgxb:spirit_peaks
+/tp @s 205966 228 203599
+/tp @s 205966 228 103599
+/locate biome oblivionmodgxb:spirit_peaks
+/tp @s 142 64 -3763
+/tp @s 205966 228 103599
+/locate biome oblivionmodgxb:spirit_peaks
+/tp @s 203470 253 106159
+/locate biome oblivionmodgxb:spirit_peaks
+/tp @s -1059 279 1734
+/tp @s 203470 253 106159
+/locate biome oblivionmodgxb:spirit_peaks
+/tp @s 204590 253 104623
+/locate biome oblivionmodgxb:spirit_peaks
+/tp @s 204590 253 204623
+/locate biome oblivionmodgxb:spirit_peaks
+/tp @s 201582 253 203151

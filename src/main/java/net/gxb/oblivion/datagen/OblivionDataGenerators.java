@@ -12,6 +12,7 @@ import net.neoforged.neoforge.data.event.GatherDataEvent;
 import net.gxb.oblivion.worldgen.tree.ModTreeConfiguredFeatures;
 import net.gxb.oblivion.worldgen.tree.ModTreePlacedFeatures;
 import net.gxb.oblivion.worldgen.ModSpikeConfiguredFeatures;
+import net.gxb.oblivion.worldgen.ModRidgeConfiguredFeatures;
 
 import java.util.Set;
 
@@ -23,10 +24,12 @@ public class OblivionDataGenerators {
             .add(Registries.CONFIGURED_FEATURE, context -> {
                 ModTreeConfiguredFeatures.bootstrap(context);
                 ModSpikeConfiguredFeatures.bootstrapConfigured(context);
+                ModRidgeConfiguredFeatures.bootstrapConfigured(context);
             })
             .add(Registries.PLACED_FEATURE, context -> {
                 ModTreePlacedFeatures.bootstrap(context);
                 ModSpikeConfiguredFeatures.bootstrapPlaced(context);
+                ModRidgeConfiguredFeatures.bootstrapPlaced(context);
             });
 
     @SubscribeEvent

@@ -12,11 +12,13 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.levelgen.blockpredicates.BlockPredicate;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.configurations.NoneFeatureConfiguration;
+import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.level.levelgen.placement.BiomeFilter;
 import net.minecraft.world.level.levelgen.placement.BlockPredicateFilter;
 import net.minecraft.world.level.levelgen.placement.InSquarePlacement;
-import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 import net.minecraft.world.level.levelgen.placement.RarityFilter;
+import net.minecraft.world.level.levelgen.placement.PlacedFeature;
+import net.minecraft.world.level.levelgen.placement.CountPlacement;
 
 import java.util.List;
 
@@ -40,7 +42,7 @@ public class ModSpikeConfiguredFeatures {
         BlockPredicateFilter groundCheck = BlockPredicateFilter.forPredicate(
                 BlockPredicate.matchesBlocks(
                         new Vec3i(0, -1, 0),
-                        List.of(Blocks.SNOW_BLOCK, Blocks.SNOW, Blocks.POWDER_SNOW, Blocks.STONE)
+                        List.of(Blocks.SNOW_BLOCK, Blocks.SNOW, Blocks.POWDER_SNOW, Blocks.STONE, Blocks.TUFF, Blocks.DEEPSLATE)
                 )
         );
 
@@ -48,7 +50,8 @@ public class ModSpikeConfiguredFeatures {
                 new PlacedFeature(
                         configuredFeatures.getOrThrow(SPIRIT_SPIKE_CONFIGURED),
                         List.of(
-                                RarityFilter.onAverageOnceEvery(6),
+                                RarityFilter.onAverageOnceEvery(2),
+                                CountPlacement.of(UniformInt.of(1, 2)),
                                 InSquarePlacement.spread(),
                                 PlacementUtils.HEIGHTMAP,
                                 groundCheck,

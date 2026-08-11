@@ -13,6 +13,7 @@ import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 import net.minecraft.world.level.levelgen.GenerationStep;
 import net.gxb.oblivion.worldgen.tree.ModTreeFeatures;
 import net.gxb.oblivion.worldgen.ModSpikeConfiguredFeatures;
+import net.gxb.oblivion.worldgen.ModRidgeConfiguredFeatures;
 
 
 public class ModBiomesGenerator {
@@ -76,9 +77,10 @@ public class ModBiomesGenerator {
         BiomeDefaultFeatures.addDefaultOres(genBuilder);
         BiomeDefaultFeatures.addFossilDecoration(genBuilder); // mountains-flavored ore, thematically fits "spirit"/rare
         genBuilder.addFeature(GenerationStep.Decoration.SURFACE_STRUCTURES, ModSpikeConfiguredFeatures.SPIRIT_SPIKE_PLACED);
+        genBuilder.addFeature(GenerationStep.Decoration.SURFACE_STRUCTURES, ModRidgeConfiguredFeatures.RIDGE_FILLER_PLACED);
         return new Biome.BiomeBuilder()
                 .hasPrecipitation(true)
-                .temperature(0.2F)   // colder, mountain-appropriate
+                .temperature(-0.5F)   // below vanilla's 0.15 snow threshold — fixes snow not generating at biome edges
                 .downfall(0.3F)
                 .specialEffects(new BiomeSpecialEffects.Builder()
                         .waterColor(0x225ad3)
